@@ -32,17 +32,15 @@ namespace KursachProject.Controller
         //метод, необходимый для записи нового магазина в список
         public static void add_shop_to_list(Shop shop)
         {
-            if (File.Exists(shop_list))
-            {
-                List<Shop> shopList = JsonConvert.DeserializeObject<List<Shop>>(File.ReadAllText(shop_list));
-                shopList.Add(shop);
-                File.WriteAllText(shop_list, JsonConvert.SerializeObject(shopList));
-            }
-            else
-            {
-                List<Shop> shopList = new List<Shop>() { shop };
-                File.WriteAllText(shop_list, JsonConvert.SerializeObject(shopList));
-            }
+            List<Shop> shopList = get_shop_list();
+            shopList.Add(shop);
+            File.WriteAllText(shop_list, JsonConvert.SerializeObject(shopList));
+        }
+        //метод, возвращающий список зарегистрированных магазинов
+        public static List<Shop> get_shop_list()
+        {
+            if(File.Exists(shop_list)) return JsonConvert.DeserializeObject<List<Shop>>(File.ReadAllText(shop_list));
+            else return new List<Shop>();
         }
         //метод, возвращающий шаблон продуктов, созданый ранее
         public static List<Product> get_product_sample_list()

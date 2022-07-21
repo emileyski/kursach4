@@ -20,6 +20,7 @@ namespace KursachProject
         {
             InitializeComponent();
             currentProductList = new List<Tuple<int, Product>>();
+            make_first_tab();
             current_product_list_dg.AllowUserToAddRows = false;
         }
 
@@ -51,15 +52,19 @@ namespace KursachProject
         {
             if(((TabControl)sender).SelectedIndex == 0)
             {
-                product_sample_cb.Items.Clear();
-                List<Product> products = Serializator.get_product_sample_list();
-                for(int i = 0; i < products.Count; i++)
-                {
-                    product_sample_cb.Items.Add(products[i].ToString());
-                }
-                current_product_list_dg.Rows.Clear();
-                currentProductList.Clear();
+                make_first_tab();
             }
+        }
+        private void make_first_tab()
+        {
+            product_sample_cb.Items.Clear();
+            List<Product> products = Serializator.get_product_sample_list();
+            for (int i = 0; i < products.Count; i++)
+            {
+                product_sample_cb.Items.Add(products[i].ToString());
+            }
+            current_product_list_dg.Rows.Clear();
+            currentProductList.Clear();
         }
 
         private void add_product_to_current_list_btn_Click(object sender, EventArgs e)
@@ -89,6 +94,45 @@ namespace KursachProject
 
         private void delete_product_from_list_btn_Click(object sender, EventArgs e)
         {
+            if(current_product_list_dg.Rows.Count > 0)
+            {
+                currentProductList.RemoveAt(current_product_list_dg.CurrentCell.RowIndex);
+                current_product_list_dg.Rows.RemoveAt(current_product_list_dg.CurrentCell.RowIndex);
+                //MessageBox.Show(current_product_list_dg.CurrentCell.RowIndex.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Ви не вибрали продукт, який хочете видалити", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void add_shop_to_list_btn_Click(object sender, EventArgs e)
+        {
+            int id = Serializator.get_shop_list().Count;
+            string shop_spec = "Не вибрано";
+            if (shop_spec_cb.Text.Length > 0 || shop_spec_tb.Text.Length > 0)
+            {
+                shop_spec = (shop_spec_tb.Text.Length > 0) ? shop_spec_tb.Text : shop_spec_cb.Text;
+            }
+
+            if (currentProductList.Count > 0)
+            {
+                try
+                {
+                    Serializator.add_shop_to_list(new Shop(id, shop_name_tb.Text, shop_spec,
+                    new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text))));
+                }
+                catch
+                {
+                    MessageBox.Show("Ви ввели якесь поле некоректно", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Список продуктів не може бути пустим", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
     }

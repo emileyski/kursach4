@@ -29,7 +29,7 @@ namespace KursachProject
             try {
                 Serializator.add_product_to_sample(new Product(product_name_tb.Text,
                     product_description_tb.Text,
-                    int.Parse(product_price_tb.Text),
+                    float.Parse(product_price_tb.Text),
                     int.Parse(expiration_date_tb.Text)));
             }
             catch {

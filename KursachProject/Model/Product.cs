@@ -12,9 +12,9 @@ namespace KursachProject.Model
         public string product_description;
 
         //поле, необходимое для идентификации магазина, в котором находиться товар
-        public string shop_name;
+        public int shop_id;
 
-        public int product_price;
+        public float product_price;
         public Date date_of_manufacture;
 
         //срок годности выраженый в днях
@@ -28,7 +28,7 @@ namespace KursachProject.Model
         //    this.shop_name = shop_name;
         //    this.product_price = product_price;
         //}
-        public Product(string product_name, string product_description, int product_price, int expiration_date)
+        public Product(string product_name, string product_description, float product_price, int expiration_date)
         {
             this.product_name = product_name;
             this.product_description = product_description;

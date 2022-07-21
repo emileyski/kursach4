@@ -15,12 +15,13 @@ namespace KursachProject.Model
         //список кортежей с количеством продуктов и описанием продукта
         public List<Tuple<int, Product>> products;
 
-        public Shop(int shopId, string shop_name, string shop_specialization, Adress adress)
+        public Shop(int shopId, string shop_name, string shop_specialization, Adress adress, List<Tuple<int, Product>> products)
         {
             ShopId = shopId;
             this.shop_name = shop_name;
             this.adress = adress;
             this.shop_specialization = shop_specialization;
+            this.products = products;
         }
     }
     public struct Adress

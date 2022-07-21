@@ -120,7 +120,8 @@ namespace KursachProject
                 try
                 {
                     Serializator.add_shop_to_list(new Shop(id, shop_name_tb.Text, shop_spec,
-                    new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text))));
+                    new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList));
+                    currentProductList.Clear();
                 }
                 catch
                 {

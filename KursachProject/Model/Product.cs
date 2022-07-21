@@ -35,6 +35,11 @@ namespace KursachProject.Model
             this.product_price = product_price;
             this.expiration_date = expiration_date;
         }
+        public Product() { }
+        public override string ToString()
+        {
+            return product_name + ": " + product_price;
+        }
     }
     public struct Date
     {

@@ -11,37 +11,44 @@ namespace KursachProject.Controller
 {
     internal static class Serializator
     {
+        const string product_sample_list = "product_sample_list.json";
+        const string shop_list = "shop_list.json";
+
         //метод, необходимый для записи в шаблон продуктов нового
         public static void add_product_to_sample(Product product)
         {
-            const string filePath = "product_sample_list.json";
-            if (File.Exists(filePath))
+            if (File.Exists(product_sample_list))
             {
-                List<Product> SampleList = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(filePath));
+                List<Product> SampleList = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(product_sample_list));
                 SampleList.Add(product);
-                File.WriteAllText(filePath,JsonConvert.SerializeObject(SampleList));
+                File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(SampleList));
             }
             else
             {
                 List<Product> SampleList = new List<Product>() { product};
-                File.WriteAllText(filePath, JsonConvert.SerializeObject(SampleList));
+                File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(SampleList));
             }
         }
         //метод, необходимый для записи нового магазина в список
         public static void add_shop_to_list(Shop shop)
         {
-            const string filePath = "shop_list.json";
-            if (File.Exists(filePath))
+            if (File.Exists(shop_list))
             {
-                List<Shop> shopList = JsonConvert.DeserializeObject<List<Shop>>(File.ReadAllText(filePath));
+                List<Shop> shopList = JsonConvert.DeserializeObject<List<Shop>>(File.ReadAllText(shop_list));
                 shopList.Add(shop);
-                File.WriteAllText(filePath, JsonConvert.SerializeObject(shopList));
+                File.WriteAllText(shop_list, JsonConvert.SerializeObject(shopList));
             }
             else
             {
                 List<Shop> shopList = new List<Shop>() { shop };
-                File.WriteAllText(filePath, JsonConvert.SerializeObject(shopList));
+                File.WriteAllText(shop_list, JsonConvert.SerializeObject(shopList));
             }
+        }
+        //метод, возвращающий шаблон продуктов, созданый ранее
+        public static List<Product> get_product_sample_list()
+        {
+            if (File.Exists(product_sample_list)) return JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(product_sample_list));
+            else return new List<Product>();
         }
     }
 }

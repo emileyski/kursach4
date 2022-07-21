@@ -35,6 +35,7 @@
             this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_of_manufacturing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.add_product_to_current_list_btn = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -42,7 +43,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.product_sample_cb = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.phone_number_box = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -62,7 +63,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.add_shop_to_list_btn = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.product_template_list_dg = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_description_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignment_period_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.expiration_date_tb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -77,18 +84,20 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.product_template_list_dg)).BeginInit();
             this.SuspendLayout();
             // 
             // main_tab_control
             // 
             this.main_tab_control.Controls.Add(this.tabPage1);
+            this.main_tab_control.Controls.Add(this.tabPage3);
             this.main_tab_control.Controls.Add(this.tabPage2);
             this.main_tab_control.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_tab_control.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.main_tab_control.Location = new System.Drawing.Point(0, 0);
             this.main_tab_control.Name = "main_tab_control";
             this.main_tab_control.SelectedIndex = 0;
-            this.main_tab_control.Size = new System.Drawing.Size(819, 555);
+            this.main_tab_control.Size = new System.Drawing.Size(825, 562);
             this.main_tab_control.TabIndex = 0;
             this.main_tab_control.SelectedIndexChanged += new System.EventHandler(this.main_tab_control_SelectedIndexChanged);
             // 
@@ -104,7 +113,7 @@
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.product_sample_cb);
-            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.phone_number_box);
             this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.panel4);
             this.tabPage1.Controls.Add(this.panel3);
@@ -127,7 +136,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(811, 517);
+            this.tabPage1.Size = new System.Drawing.Size(817, 524);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Додати інформацію про магазин";
             // 
@@ -150,7 +159,8 @@
             this.current_product_list_dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.product_name,
             this.product_count,
-            this.product_price});
+            this.product_price,
+            this.date_of_manufacturing});
             this.current_product_list_dg.Location = new System.Drawing.Point(397, 155);
             this.current_product_list_dg.MultiSelect = false;
             this.current_product_list_dg.Name = "current_product_list_dg";
@@ -184,12 +194,20 @@
             this.product_price.ReadOnly = true;
             this.product_price.Width = 125;
             // 
+            // date_of_manufacturing
+            // 
+            this.date_of_manufacturing.HeaderText = "Дата виготовлення";
+            this.date_of_manufacturing.MinimumWidth = 6;
+            this.date_of_manufacturing.Name = "date_of_manufacturing";
+            this.date_of_manufacturing.ReadOnly = true;
+            this.date_of_manufacturing.Width = 125;
+            // 
             // add_product_to_current_list_btn
             // 
             this.add_product_to_current_list_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.add_product_to_current_list_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_product_to_current_list_btn.ForeColor = System.Drawing.Color.White;
-            this.add_product_to_current_list_btn.Location = new System.Drawing.Point(229, 239);
+            this.add_product_to_current_list_btn.Location = new System.Drawing.Point(226, 308);
             this.add_product_to_current_list_btn.Name = "add_product_to_current_list_btn";
             this.add_product_to_current_list_btn.Size = new System.Drawing.Size(146, 98);
             this.add_product_to_current_list_btn.TabIndex = 21;
@@ -200,7 +218,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(14, 249);
+            this.label15.Location = new System.Drawing.Point(11, 318);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(195, 25);
             this.label15.TabIndex = 20;
@@ -208,14 +226,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(9, 290);
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 359);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
             this.dateTimePicker1.TabIndex = 19;
             // 
             // product_count_tb
             // 
-            this.product_count_tb.Location = new System.Drawing.Point(182, 193);
+            this.product_count_tb.Location = new System.Drawing.Point(179, 262);
             this.product_count_tb.Name = "product_count_tb";
             this.product_count_tb.Size = new System.Drawing.Size(191, 30);
             this.product_count_tb.TabIndex = 18;
@@ -223,7 +241,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 193);
+            this.label14.Location = new System.Drawing.Point(11, 262);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(164, 25);
             this.label14.TabIndex = 17;
@@ -232,7 +250,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 142);
+            this.label13.Location = new System.Drawing.Point(11, 211);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(153, 25);
             this.label13.TabIndex = 16;
@@ -241,22 +259,22 @@
             // product_sample_cb
             // 
             this.product_sample_cb.FormattingEnabled = true;
-            this.product_sample_cb.Location = new System.Drawing.Point(173, 139);
+            this.product_sample_cb.Location = new System.Drawing.Point(170, 208);
             this.product_sample_cb.Name = "product_sample_cb";
             this.product_sample_cb.Size = new System.Drawing.Size(200, 33);
             this.product_sample_cb.TabIndex = 15;
             // 
-            // textBox6
+            // phone_number_box
             // 
-            this.textBox6.Location = new System.Drawing.Point(601, 103);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(205, 30);
-            this.textBox6.TabIndex = 14;
+            this.phone_number_box.Location = new System.Drawing.Point(601, 103);
+            this.phone_number_box.Name = "phone_number_box";
+            this.phone_number_box.Size = new System.Drawing.Size(205, 30);
+            this.phone_number_box.TabIndex = 14;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel5.Location = new System.Drawing.Point(0, 112);
+            this.panel5.Location = new System.Drawing.Point(-2, 192);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(393, 10);
             this.panel5.TabIndex = 11;
@@ -415,9 +433,19 @@
             this.add_shop_to_list_btn.UseVisualStyleBackColor = false;
             this.add_shop_to_list_btn.Click += new System.EventHandler(this.add_shop_to_list_btn_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(811, 517);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Додати спеціалізацію до магазину";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage2.Controls.Add(this.product_template_list_dg);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.expiration_date_tb);
             this.tabPage2.Controls.Add(this.label4);
@@ -434,6 +462,55 @@
             this.tabPage2.Size = new System.Drawing.Size(811, 517);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Додати шаблон продукту";
+            // 
+            // product_template_list_dg
+            // 
+            this.product_template_list_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.product_template_list_dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.product_description_column,
+            this.dataGridViewTextBoxColumn3,
+            this.assignment_period_column});
+            this.product_template_list_dg.Location = new System.Drawing.Point(485, 3);
+            this.product_template_list_dg.MultiSelect = false;
+            this.product_template_list_dg.Name = "product_template_list_dg";
+            this.product_template_list_dg.RowHeadersVisible = false;
+            this.product_template_list_dg.RowHeadersWidth = 51;
+            this.product_template_list_dg.RowTemplate.Height = 24;
+            this.product_template_list_dg.Size = new System.Drawing.Size(326, 464);
+            this.product_template_list_dg.TabIndex = 23;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Товар";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // product_description_column
+            // 
+            this.product_description_column.HeaderText = "Опис продукту";
+            this.product_description_column.MinimumWidth = 6;
+            this.product_description_column.Name = "product_description_column";
+            this.product_description_column.ReadOnly = true;
+            this.product_description_column.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ціна";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // assignment_period_column
+            // 
+            this.assignment_period_column.HeaderText = "Термін придатності";
+            this.assignment_period_column.MinimumWidth = 6;
+            this.assignment_period_column.Name = "assignment_period_column";
+            this.assignment_period_column.ReadOnly = true;
+            this.assignment_period_column.Width = 125;
             // 
             // panel1
             // 
@@ -525,7 +602,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(819, 555);
+            this.ClientSize = new System.Drawing.Size(825, 562);
             this.Controls.Add(this.main_tab_control);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
@@ -537,6 +614,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.product_template_list_dg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -574,7 +652,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox phone_number_box;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox product_sample_cb;
         private System.Windows.Forms.Label label15;
@@ -588,6 +666,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn product_price;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button delete_product_from_list_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_of_manufacturing;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView product_template_list_dg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_description_column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assignment_period_column;
     }
 }
 

@@ -6,6 +6,22 @@ using System.Threading.Tasks;
 
 namespace KursachProject.Model
 {
+    public struct Date
+    {
+        public int year;
+        public int month;
+        public int day;
+        public Date(int year, int month, int day)
+        {
+            this.year = year;
+            this.month = month;
+            this.day = day;
+        }
+        public override string ToString()
+        {
+            return day + "/" + month + "/" + year;
+        }
+    }
     internal class Product
     {
         public string product_name;
@@ -41,16 +57,5 @@ namespace KursachProject.Model
             return product_name + ": " + product_price;
         }
     }
-    public struct Date
-    {
-        public int year;
-        public int month;
-        public int day;
-        public Date(int year, int month, int day)
-        {
-            this.year = year;
-            this.month = month;
-            this.day = day;
-        }
-    }
+    
 }

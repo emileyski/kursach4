@@ -54,7 +54,37 @@ namespace KursachProject
             {
                 make_first_tab();
             }
+            if(((TabControl)sender).SelectedIndex == 2)
+            {
+                make_third_tab();
+            }
+                //get_product_sample_list
         }
+
+        private void make_spec_list()
+        {
+            List<Shop> shops = Serializator.get_shop_list();
+            for(int i = 0; i < shops.Count; i++)
+            {
+                if (!shop_spec_cb.Items.Contains(shops[i].shop_specialization))
+                {
+                    shop_spec_cb.Items.Add(shops[i].shop_specialization);
+                }
+            }
+        }
+        private void make_third_tab()
+        {
+            List<Product> products = Serializator.get_product_sample_list();
+            product_template_list_dg.Rows.Clear();
+            for(int i =0; i < products.Count; i++)
+            {
+                product_template_list_dg.Rows.Add(products[i].product_name,
+                    products[i].product_description,
+                    products[i].product_price,
+                    products[i].expiration_date + " день(ів)");
+            }
+        }
+        //метод, который подгружает данные для первой страницы
         private void make_first_tab()
         {
             product_sample_cb.Items.Clear();
@@ -63,6 +93,9 @@ namespace KursachProject
             {
                 product_sample_cb.Items.Add(products[i].ToString());
             }
+            make_spec_list();
+            shop_spec_tb.Clear();
+            city_tb.Clear();
             current_product_list_dg.Rows.Clear();
             currentProductList.Clear();
         }
@@ -76,10 +109,11 @@ namespace KursachProject
                     int x = product_sample_cb.SelectedIndex;
 
                     Product product = Serializator.get_product_sample_list()[x];
+                    product.date_of_manufacture = new Date(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
                     Tuple<int, Product> tuple = Tuple.Create(int.Parse(product_count_tb.Text), product);
                     currentProductList.Add(tuple);
 
-                    current_product_list_dg.Rows.Add(product.product_name, tuple.Item1, product.product_price);
+                    current_product_list_dg.Rows.Add(product.product_name, tuple.Item1, product.product_price, product.date_of_manufacture.ToString());
                 }
                 catch
                 {
@@ -121,7 +155,7 @@ namespace KursachProject
                 {
                     Serializator.add_shop_to_list(new Shop(id, shop_name_tb.Text, shop_spec,
                     new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList));
-                    currentProductList.Clear();
+                    make_first_tab();
                 }
                 catch
                 {

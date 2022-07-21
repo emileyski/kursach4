@@ -8,20 +8,26 @@ namespace KursachProject.Model
 {
     internal class Shop
     {
-        public int ShopId;
+        public int shop_Id;
         public string shop_name;
         public string shop_specialization;
         public Adress adress;
         //список кортежей с количеством продуктов и описанием продукта
         public List<Tuple<int, Product>> products;
 
-        public Shop(int shopId, string shop_name, string shop_specialization, Adress adress, List<Tuple<int, Product>> products)
+        public Shop(int shop_Id, string shop_name, string shop_specialization, Adress adress, List<Tuple<int, Product>> products)
         {
-            ShopId = shopId;
+            this.shop_Id = shop_Id;
             this.shop_name = shop_name;
             this.adress = adress;
             this.shop_specialization = shop_specialization;
             this.products = products;
+            for(int i = 0; i < products.Count; i++)
+            {
+                Product product = products[i].Item2;
+                product.shop_id = this.shop_Id;
+                products[i] = Tuple.Create(products[i].Item1, product);
+            }
         }
     }
     public struct Adress

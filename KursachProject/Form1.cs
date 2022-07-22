@@ -22,6 +22,7 @@ namespace KursachProject
             currentProductList = new List<Tuple<int, Product>>();
             make_first_tab();
             product_template_list_dg.AllowUserToAddRows = false;
+            shop_list_dg.AllowUserToAddRows = false;
             current_product_list_dg.AllowUserToAddRows = false;
         }
 
@@ -48,15 +49,18 @@ namespace KursachProject
 
         private void main_tab_control_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(((TabControl)sender).SelectedIndex == 0)
+            switch (((TabControl)sender).SelectedIndex)
             {
-                make_first_tab();
+                case 0:
+                    make_first_tab();
+                    break;
+                case 1:
+                    make_second_tab();
+                    break;
+                case 2:
+                    make_third_tab();
+                    break;
             }
-            if(((TabControl)sender).SelectedIndex == 2)
-            {
-                make_third_tab();
-            }
-                //get_product_sample_list
         }
 
         private void make_spec_list()
@@ -70,22 +74,7 @@ namespace KursachProject
                 }
             }
         }
-        private void make_third_tab()
-        {
-            List<Product> products = Serializator.get_product_sample_list();
-            product_template_list_dg.Rows.Clear();
-            for(int i =0; i < products.Count; i++)
-            {
-                product_template_list_dg.Rows.Add(products[i].product_name,
-                    products[i].product_description,
-                    products[i].product_price,
-                    products[i].expiration_date + " день(ів)");
-            }
-            product_name_tb.Clear();
-            product_description_tb.Clear();
-            product_price_tb.Clear();
-            expiration_date_tb.Clear();
-        }
+        
         //метод, который подгружает данные для первой страницы
         private void make_first_tab()
         {
@@ -113,7 +102,34 @@ namespace KursachProject
             cbEndTimeHour.Text = "год.";
             cbEndTimeMinute.Text = "хв.";
         }
-
+        private void make_second_tab()
+        {
+            List<Shop> shopList = Serializator.get_shop_list();
+            for(int i = 0; i < shopList.Count; i++)
+            {
+                shop_list_dg.Rows.Add(shopList[i].shop_name,
+                    shopList[i].adress.ToString(),
+                    shopList[i].products.Count,
+                    shopList[i].open_time.ToString(),
+                    shopList[i].close_time.ToString());
+            }
+        }
+        private void make_third_tab()
+        {
+            List<Product> products = Serializator.get_product_sample_list();
+            product_template_list_dg.Rows.Clear();
+            for (int i = 0; i < products.Count; i++)
+            {
+                product_template_list_dg.Rows.Add(products[i].product_name,
+                    products[i].product_description,
+                    products[i].product_price,
+                    products[i].expiration_date + " день(ів)");
+            }
+            product_name_tb.Clear();
+            product_description_tb.Clear();
+            product_price_tb.Clear();
+            expiration_date_tb.Clear();
+        }
         private void add_product_to_current_list_btn_Click(object sender, EventArgs e)
         {
             if (product_sample_cb.SelectedIndex > -1)

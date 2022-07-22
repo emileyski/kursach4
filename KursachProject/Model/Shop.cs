@@ -47,6 +47,10 @@ namespace KursachProject.Model
             this.street = street;
             this.number = number;
         }
+        public override string ToString()
+        {
+            return "м. " + city + ", вул. " + street + ", буд. " + number;
+        }
     }
     public struct Time
     {

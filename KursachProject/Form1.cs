@@ -21,6 +21,7 @@ namespace KursachProject
             InitializeComponent();
             currentProductList = new List<Tuple<int, Product>>();
             make_first_tab();
+            product_template_list_dg.AllowUserToAddRows = false;
             current_product_list_dg.AllowUserToAddRows = false;
         }
 
@@ -38,10 +39,7 @@ namespace KursachProject
                     int.Parse(expiration_date_tb.Text)));
 
                 //чистим поля для ввода
-                product_name_tb.Clear();
-                product_description_tb.Clear();
-                product_price_tb.Clear();
-                expiration_date_tb.Clear();
+                make_third_tab();
             }
             catch {
                 MessageBox.Show("Одне або кілька полів було заповнено некоректно", "Увага", MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -83,6 +81,10 @@ namespace KursachProject
                     products[i].product_price,
                     products[i].expiration_date + " день(ів)");
             }
+            product_name_tb.Clear();
+            product_description_tb.Clear();
+            product_price_tb.Clear();
+            expiration_date_tb.Clear();
         }
         //метод, который подгружает данные для первой страницы
         private void make_first_tab()
@@ -93,11 +95,23 @@ namespace KursachProject
             {
                 product_sample_cb.Items.Add(products[i].ToString());
             }
+            //вызываем метод, который отобразит список созданых ранее специализаций
             make_spec_list();
             shop_spec_tb.Clear();
             city_tb.Clear();
             current_product_list_dg.Rows.Clear();
             currentProductList.Clear();
+            phone_number_box.Clear();
+            shop_spec_cb.SelectedIndex = -1;
+            shop_spec_cb.Text = null;
+            shop_name_tb.Clear();
+            street_tb.Clear();
+            number_tb.Clear();
+            product_count_tb.Clear();
+            cbStartTimeHour.Text = "год.";
+            cbStartTimeHour.Text = "хв.";
+            cbEndTimeHour.Text = "год.";
+            cbEndTimeMinute.Text = "хв.";
         }
 
         private void add_product_to_current_list_btn_Click(object sender, EventArgs e)
@@ -151,11 +165,28 @@ namespace KursachProject
 
             if (currentProductList.Count > 0)
             {
+
                 try
                 {
-                    Serializator.add_shop_to_list(new Shop(id, shop_name_tb.Text, shop_spec,
-                    new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList));
-                    make_first_tab();
+                    bool isGoodPhoneNum = true;
+
+                    for(int i = 0; i < phone_number_box.Text.Length; i++)
+                    {
+                        if (!char.IsDigit(phone_number_box.Text[i]))
+                        {
+                            isGoodPhoneNum = false; break;
+                        }
+                    }
+
+                    if (phone_number_box.Text.Length > 0 && isGoodPhoneNum)
+                    {
+                        Serializator.add_shop_to_list(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
+                            new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
+                            new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList));
+                        make_first_tab();
+                    }
+                    else
+                        MessageBox.Show("Введений вами номер телефону не є коректним", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch
                 {
@@ -169,6 +200,15 @@ namespace KursachProject
             }
 
 
+        }
+
+        private void delete_product_sample_from_list_btn_Click(object sender, EventArgs e)
+        {
+            if(product_template_list_dg.CurrentCell!= null)
+            {
+                Serializator.delete_product_sample_from_list(product_template_list_dg.CurrentCell.RowIndex);
+                product_template_list_dg.Rows.RemoveAt(product_template_list_dg.CurrentCell.RowIndex);
+            }
         }
     }
 }

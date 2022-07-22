@@ -44,7 +44,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.product_sample_cb = new System.Windows.Forms.ComboBox();
             this.phone_number_box = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -80,11 +79,30 @@
             this.product_description_tb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.delete_product_sample_from_list_btn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cbEndTimeMinute = new System.Windows.Forms.ComboBox();
+            this.cbEndTimeHour = new System.Windows.Forms.ComboBox();
+            this.cbStartTimeMinute = new System.Windows.Forms.ComboBox();
+            this.cbStartTimeHour = new System.Windows.Forms.ComboBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.close_shop_time_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.main_tab_control.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product_template_list_dg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // main_tab_control
@@ -104,6 +122,14 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabPage1.Controls.Add(this.panel7);
+            this.tabPage1.Controls.Add(this.cbEndTimeMinute);
+            this.tabPage1.Controls.Add(this.cbEndTimeHour);
+            this.tabPage1.Controls.Add(this.cbStartTimeMinute);
+            this.tabPage1.Controls.Add(this.cbStartTimeHour);
+            this.tabPage1.Controls.Add(this.panel8);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.delete_product_from_list_btn);
             this.tabPage1.Controls.Add(this.current_product_list_dg);
             this.tabPage1.Controls.Add(this.add_product_to_current_list_btn);
@@ -114,6 +140,7 @@
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.product_sample_cb);
             this.tabPage1.Controls.Add(this.phone_number_box);
+            this.tabPage1.Controls.Add(this.panel6);
             this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.panel4);
             this.tabPage1.Controls.Add(this.panel3);
@@ -207,7 +234,7 @@
             this.add_product_to_current_list_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.add_product_to_current_list_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_product_to_current_list_btn.ForeColor = System.Drawing.Color.White;
-            this.add_product_to_current_list_btn.Location = new System.Drawing.Point(226, 308);
+            this.add_product_to_current_list_btn.Location = new System.Drawing.Point(226, 326);
             this.add_product_to_current_list_btn.Name = "add_product_to_current_list_btn";
             this.add_product_to_current_list_btn.Size = new System.Drawing.Size(146, 98);
             this.add_product_to_current_list_btn.TabIndex = 21;
@@ -218,7 +245,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(11, 318);
+            this.label15.Location = new System.Drawing.Point(11, 336);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(195, 25);
             this.label15.TabIndex = 20;
@@ -226,14 +253,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 359);
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 377);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
             this.dateTimePicker1.TabIndex = 19;
             // 
             // product_count_tb
             // 
-            this.product_count_tb.Location = new System.Drawing.Point(179, 262);
+            this.product_count_tb.Location = new System.Drawing.Point(179, 280);
             this.product_count_tb.Name = "product_count_tb";
             this.product_count_tb.Size = new System.Drawing.Size(191, 30);
             this.product_count_tb.TabIndex = 18;
@@ -241,7 +268,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(11, 262);
+            this.label14.Location = new System.Drawing.Point(11, 280);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(164, 25);
             this.label14.TabIndex = 17;
@@ -250,7 +277,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(11, 211);
+            this.label13.Location = new System.Drawing.Point(11, 229);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(153, 25);
             this.label13.TabIndex = 16;
@@ -259,7 +286,7 @@
             // product_sample_cb
             // 
             this.product_sample_cb.FormattingEnabled = true;
-            this.product_sample_cb.Location = new System.Drawing.Point(170, 208);
+            this.product_sample_cb.Location = new System.Drawing.Point(170, 226);
             this.product_sample_cb.Name = "product_sample_cb";
             this.product_sample_cb.Size = new System.Drawing.Size(200, 33);
             this.product_sample_cb.TabIndex = 15;
@@ -270,14 +297,6 @@
             this.phone_number_box.Name = "phone_number_box";
             this.phone_number_box.Size = new System.Drawing.Size(205, 30);
             this.phone_number_box.TabIndex = 14;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel5.Location = new System.Drawing.Point(-2, 192);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(393, 10);
-            this.panel5.TabIndex = 11;
             // 
             // panel4
             // 
@@ -435,16 +454,18 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(811, 517);
+            this.tabPage3.Size = new System.Drawing.Size(817, 524);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Додати спеціалізацію до магазину";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Text = "Список існуючих магазинів";
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage2.Controls.Add(this.delete_product_sample_from_list_btn);
             this.tabPage2.Controls.Add(this.product_template_list_dg);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.expiration_date_tb);
@@ -459,7 +480,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(811, 517);
+            this.tabPage2.Size = new System.Drawing.Size(817, 524);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Додати шаблон продукту";
             // 
@@ -597,6 +618,352 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Назва продукту";
             // 
+            // delete_product_sample_from_list_btn
+            // 
+            this.delete_product_sample_from_list_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.delete_product_sample_from_list_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_product_sample_from_list_btn.ForeColor = System.Drawing.Color.White;
+            this.delete_product_sample_from_list_btn.Location = new System.Drawing.Point(496, 483);
+            this.delete_product_sample_from_list_btn.Name = "delete_product_sample_from_list_btn";
+            this.delete_product_sample_from_list_btn.Size = new System.Drawing.Size(313, 35);
+            this.delete_product_sample_from_list_btn.TabIndex = 24;
+            this.delete_product_sample_from_list_btn.Text = "Видалити шаблон із списку";
+            this.delete_product_sample_from_list_btn.UseVisualStyleBackColor = false;
+            this.delete_product_sample_from_list_btn.Click += new System.EventHandler(this.delete_product_sample_from_list_btn_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.close_shop_time_column});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(505, 524);
+            this.dataGridView1.TabIndex = 24;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel6.Location = new System.Drawing.Point(0, 418);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(393, 10);
+            this.panel6.TabIndex = 11;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(11, 124);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 25);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "Працює з";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(243, 124);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 25);
+            this.label17.TabIndex = 25;
+            this.label17.Text = "до:";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel8.Location = new System.Drawing.Point(-4, 110);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(394, 10);
+            this.panel8.TabIndex = 12;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel5.Location = new System.Drawing.Point(-2, 205);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(393, 10);
+            this.panel5.TabIndex = 11;
+            // 
+            // cbEndTimeMinute
+            // 
+            this.cbEndTimeMinute.DropDownHeight = 100;
+            this.cbEndTimeMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbEndTimeMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbEndTimeMinute.FormattingEnabled = true;
+            this.cbEndTimeMinute.IntegralHeight = false;
+            this.cbEndTimeMinute.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.cbEndTimeMinute.Location = new System.Drawing.Point(306, 155);
+            this.cbEndTimeMinute.Name = "cbEndTimeMinute";
+            this.cbEndTimeMinute.Size = new System.Drawing.Size(70, 33);
+            this.cbEndTimeMinute.TabIndex = 29;
+            this.cbEndTimeMinute.Text = "хв.";
+            // 
+            // cbEndTimeHour
+            // 
+            this.cbEndTimeHour.DropDownHeight = 100;
+            this.cbEndTimeHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbEndTimeHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbEndTimeHour.FormattingEnabled = true;
+            this.cbEndTimeHour.IntegralHeight = false;
+            this.cbEndTimeHour.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.cbEndTimeHour.Location = new System.Drawing.Point(221, 155);
+            this.cbEndTimeHour.Name = "cbEndTimeHour";
+            this.cbEndTimeHour.Size = new System.Drawing.Size(70, 33);
+            this.cbEndTimeHour.TabIndex = 28;
+            this.cbEndTimeHour.Text = "год.";
+            // 
+            // cbStartTimeMinute
+            // 
+            this.cbStartTimeMinute.DropDownHeight = 100;
+            this.cbStartTimeMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbStartTimeMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbStartTimeMinute.FormattingEnabled = true;
+            this.cbStartTimeMinute.IntegralHeight = false;
+            this.cbStartTimeMinute.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.cbStartTimeMinute.Location = new System.Drawing.Point(99, 155);
+            this.cbStartTimeMinute.Name = "cbStartTimeMinute";
+            this.cbStartTimeMinute.Size = new System.Drawing.Size(70, 33);
+            this.cbStartTimeMinute.TabIndex = 27;
+            this.cbStartTimeMinute.Text = "хв.";
+            // 
+            // cbStartTimeHour
+            // 
+            this.cbStartTimeHour.DropDownHeight = 100;
+            this.cbStartTimeHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbStartTimeHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbStartTimeHour.FormattingEnabled = true;
+            this.cbStartTimeHour.IntegralHeight = false;
+            this.cbStartTimeHour.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.cbStartTimeHour.Location = new System.Drawing.Point(19, 155);
+            this.cbStartTimeHour.Name = "cbStartTimeHour";
+            this.cbStartTimeHour.Size = new System.Drawing.Size(70, 33);
+            this.cbStartTimeHour.TabIndex = 26;
+            this.cbStartTimeHour.Text = "год.";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel7.Location = new System.Drawing.Point(196, 120);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(10, 90);
+            this.panel7.TabIndex = 12;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Назва магазину";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Адреса";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Кількість товарів";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Час відчинення";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // close_shop_time_column
+            // 
+            this.close_shop_time_column.HeaderText = "Час зачинення";
+            this.close_shop_time_column.MinimumWidth = 6;
+            this.close_shop_time_column.Name = "close_shop_time_column";
+            this.close_shop_time_column.ReadOnly = true;
+            this.close_shop_time_column.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -604,7 +971,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(825, 562);
             this.Controls.Add(this.main_tab_control);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Довідник покупця";
@@ -612,9 +979,11 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product_template_list_dg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -651,7 +1020,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox phone_number_box;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox product_sample_cb;
@@ -673,6 +1041,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn product_description_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn assignment_period_column;
+        private System.Windows.Forms.Button delete_product_sample_from_list_btn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ComboBox cbEndTimeMinute;
+        private System.Windows.Forms.ComboBox cbEndTimeHour;
+        private System.Windows.Forms.ComboBox cbStartTimeMinute;
+        private System.Windows.Forms.ComboBox cbStartTimeHour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn close_shop_time_column;
     }
 }
 

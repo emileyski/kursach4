@@ -17,18 +17,26 @@ namespace KursachProject.Controller
         //метод, необходимый для записи в шаблон продуктов нового
         public static void add_product_to_sample(Product product)
         {
-            if (File.Exists(product_sample_list))
-            {
-                List<Product> SampleList = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(product_sample_list));
-                SampleList.Add(product);
-                File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(SampleList));
-            }
-            else
-            {
-                List<Product> SampleList = new List<Product>() { product};
-                File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(SampleList));
-            }
+            //if (File.Exists(product_sample_list))
+            //{
+            //    List<Product> SampleList = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(product_sample_list));
+            //    SampleList.Add(product);
+            //    File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(SampleList));
+            //}
+            //else
+            //{
+            //    List<Product> SampleList = new List<Product>() { product};
+            //    File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(SampleList));
+            //}
+            List<Product> SampleList = get_product_sample_list(); SampleList.Add(product);
+            write_product_sample_list(SampleList);
         }
+
+        public static void write_product_sample_list(List<Product> products)
+        {
+            File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(products));
+        }
+
         //метод, необходимый для записи нового магазина в список
         public static void add_shop_to_list(Shop shop)
         {
@@ -47,6 +55,13 @@ namespace KursachProject.Controller
         {
             if (File.Exists(product_sample_list)) return JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(product_sample_list));
             else return new List<Product>();
+        }
+        //метод, удаляющий шаблон продукта из списка
+        public static void delete_product_sample_from_list(int sampleIndex)
+        {
+            List<Product> products = get_product_sample_list();
+            products.RemoveAt(sampleIndex);
+            write_product_sample_list(products);
         }
     }
 }

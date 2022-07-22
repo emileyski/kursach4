@@ -73,6 +73,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.add_shop_to_list_btn = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.delete_selected_shop = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.add_product_to_selected_shop_btn = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.added_product_count_tb = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.added_product_sample_cb = new System.Windows.Forms.ComboBox();
             this.shop_list_dg = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,18 +108,6 @@
             this.product_description_tb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.add_product_to_selected_shop_btn = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.product_sample_second_tab_cb = new System.Windows.Forms.ComboBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.main_tab_control.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).BeginInit();
@@ -255,7 +255,7 @@
             "57",
             "58",
             "59"});
-            this.cbEndTimeMinute.Location = new System.Drawing.Point(306, 155);
+            this.cbEndTimeMinute.Location = new System.Drawing.Point(302, 164);
             this.cbEndTimeMinute.Name = "cbEndTimeMinute";
             this.cbEndTimeMinute.Size = new System.Drawing.Size(70, 33);
             this.cbEndTimeMinute.TabIndex = 29;
@@ -293,7 +293,7 @@
             "21",
             "22",
             "23"});
-            this.cbEndTimeHour.Location = new System.Drawing.Point(221, 155);
+            this.cbEndTimeHour.Location = new System.Drawing.Point(217, 164);
             this.cbEndTimeHour.Name = "cbEndTimeHour";
             this.cbEndTimeHour.Size = new System.Drawing.Size(70, 33);
             this.cbEndTimeHour.TabIndex = 28;
@@ -367,7 +367,7 @@
             "57",
             "58",
             "59"});
-            this.cbStartTimeMinute.Location = new System.Drawing.Point(99, 155);
+            this.cbStartTimeMinute.Location = new System.Drawing.Point(95, 164);
             this.cbStartTimeMinute.Name = "cbStartTimeMinute";
             this.cbStartTimeMinute.Size = new System.Drawing.Size(70, 33);
             this.cbStartTimeMinute.TabIndex = 27;
@@ -405,7 +405,7 @@
             "21",
             "22",
             "23"});
-            this.cbStartTimeHour.Location = new System.Drawing.Point(19, 155);
+            this.cbStartTimeHour.Location = new System.Drawing.Point(15, 164);
             this.cbStartTimeHour.Name = "cbStartTimeHour";
             this.cbStartTimeHour.Size = new System.Drawing.Size(70, 33);
             this.cbStartTimeHour.TabIndex = 26;
@@ -422,7 +422,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(243, 124);
+            this.label17.Location = new System.Drawing.Point(239, 133);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 25);
             this.label17.TabIndex = 25;
@@ -431,7 +431,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(11, 124);
+            this.label16.Location = new System.Drawing.Point(7, 133);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 25);
             this.label16.TabIndex = 24;
@@ -742,23 +742,138 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.delete_selected_shop);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.panel10);
             this.tabPage3.Controls.Add(this.panel9);
             this.tabPage3.Controls.Add(this.add_product_to_selected_shop_btn);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.dateTimePicker2);
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.added_product_count_tb);
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Controls.Add(this.product_sample_second_tab_cb);
+            this.tabPage3.Controls.Add(this.added_product_sample_cb);
             this.tabPage3.Controls.Add(this.shop_list_dg);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(817, 524);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Список існуючих магазинів";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(526, 84);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(283, 58);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Редагувати вибраний магазин";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // delete_selected_shop
+            // 
+            this.delete_selected_shop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.delete_selected_shop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_selected_shop.ForeColor = System.Drawing.Color.White;
+            this.delete_selected_shop.Location = new System.Drawing.Point(526, 148);
+            this.delete_selected_shop.Name = "delete_selected_shop";
+            this.delete_selected_shop.Size = new System.Drawing.Size(283, 64);
+            this.delete_selected_shop.TabIndex = 34;
+            this.delete_selected_shop.Text = "Видалити магазин із списку";
+            this.delete_selected_shop.UseVisualStyleBackColor = false;
+            this.delete_selected_shop.Click += new System.EventHandler(this.delete_selected_shop_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(526, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(283, 64);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Переглянути всю інформацію про магазин";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel10.Location = new System.Drawing.Point(510, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(10, 521);
+            this.panel10.TabIndex = 33;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel9.Location = new System.Drawing.Point(519, 289);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(298, 10);
+            this.panel9.TabIndex = 32;
+            // 
+            // add_product_to_selected_shop_btn
+            // 
+            this.add_product_to_selected_shop_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.add_product_to_selected_shop_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_product_to_selected_shop_btn.ForeColor = System.Drawing.Color.White;
+            this.add_product_to_selected_shop_btn.Location = new System.Drawing.Point(560, 456);
+            this.add_product_to_selected_shop_btn.Name = "add_product_to_selected_shop_btn";
+            this.add_product_to_selected_shop_btn.Size = new System.Drawing.Size(236, 64);
+            this.add_product_to_selected_shop_btn.TabIndex = 31;
+            this.add_product_to_selected_shop_btn.Text = "Додати товар до вибраного магазину\r\n\r\n";
+            this.add_product_to_selected_shop_btn.UseVisualStyleBackColor = false;
+            this.add_product_to_selected_shop_btn.Click += new System.EventHandler(this.add_product_to_selected_shop_btn_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(519, 392);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(195, 25);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Дата виготовлення";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(535, 420);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(278, 30);
+            this.dateTimePicker2.TabIndex = 29;
+            // 
+            // added_product_count_tb
+            // 
+            this.added_product_count_tb.Location = new System.Drawing.Point(698, 359);
+            this.added_product_count_tb.Name = "added_product_count_tb";
+            this.added_product_count_tb.Size = new System.Drawing.Size(115, 30);
+            this.added_product_count_tb.TabIndex = 28;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(519, 359);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(164, 25);
+            this.label19.TabIndex = 27;
+            this.label19.Text = "Кількість товару";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(519, 308);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(153, 25);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "Виберіть товар";
+            // 
+            // added_product_sample_cb
+            // 
+            this.added_product_sample_cb.FormattingEnabled = true;
+            this.added_product_sample_cb.Location = new System.Drawing.Point(681, 305);
+            this.added_product_sample_cb.Name = "added_product_sample_cb";
+            this.added_product_sample_cb.Size = new System.Drawing.Size(132, 33);
+            this.added_product_sample_cb.TabIndex = 25;
             // 
             // shop_list_dg
             // 
@@ -988,119 +1103,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Назва продукту";
             // 
-            // add_product_to_selected_shop_btn
-            // 
-            this.add_product_to_selected_shop_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.add_product_to_selected_shop_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_product_to_selected_shop_btn.ForeColor = System.Drawing.Color.White;
-            this.add_product_to_selected_shop_btn.Location = new System.Drawing.Point(560, 456);
-            this.add_product_to_selected_shop_btn.Name = "add_product_to_selected_shop_btn";
-            this.add_product_to_selected_shop_btn.Size = new System.Drawing.Size(236, 64);
-            this.add_product_to_selected_shop_btn.TabIndex = 31;
-            this.add_product_to_selected_shop_btn.Text = "Додати товар до вибраного магазину\r\n\r\n";
-            this.add_product_to_selected_shop_btn.UseVisualStyleBackColor = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(519, 392);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(195, 25);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "Дата виготовлення";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(535, 420);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(278, 30);
-            this.dateTimePicker2.TabIndex = 29;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(698, 359);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 30);
-            this.textBox1.TabIndex = 28;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(519, 359);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(164, 25);
-            this.label19.TabIndex = 27;
-            this.label19.Text = "Кількість товару";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(519, 308);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(153, 25);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "Виберіть товар";
-            // 
-            // product_sample_second_tab_cb
-            // 
-            this.product_sample_second_tab_cb.FormattingEnabled = true;
-            this.product_sample_second_tab_cb.Location = new System.Drawing.Point(681, 305);
-            this.product_sample_second_tab_cb.Name = "product_sample_second_tab_cb";
-            this.product_sample_second_tab_cb.Size = new System.Drawing.Size(132, 33);
-            this.product_sample_second_tab_cb.TabIndex = 25;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel9.Location = new System.Drawing.Point(519, 289);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(298, 10);
-            this.panel9.TabIndex = 32;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel10.Location = new System.Drawing.Point(510, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(10, 521);
-            this.panel10.TabIndex = 33;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(526, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(283, 64);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Переглянути всю інформацію про магазин";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(526, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(283, 41);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Видалити магазин із списку";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(526, 84);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(283, 58);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "Редагувати вибраний магазин";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1199,14 +1201,14 @@
         private System.Windows.Forms.Button add_product_to_selected_shop_btn;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox added_product_count_tb;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox product_sample_second_tab_cb;
+        private System.Windows.Forms.ComboBox added_product_sample_cb;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button delete_selected_shop;
         private System.Windows.Forms.Button button1;
     }
 }

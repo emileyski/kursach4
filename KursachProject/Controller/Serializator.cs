@@ -17,32 +17,20 @@ namespace KursachProject.Controller
         //метод, необходимый для записи в шаблон продуктов нового
         public static void add_product_to_sample(Product product)
         {
-            //if (File.Exists(product_sample_list))
-            //{
-            //    List<Product> SampleList = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(product_sample_list));
-            //    SampleList.Add(product);
-            //    File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(SampleList));
-            //}
-            //else
-            //{
-            //    List<Product> SampleList = new List<Product>() { product};
-            //    File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(SampleList));
-            //}
             List<Product> SampleList = get_product_sample_list(); SampleList.Add(product);
             write_product_sample_list(SampleList);
         }
-
+        //метод, который записывает все продукты
         public static void write_product_sample_list(List<Product> products)
         {
             File.WriteAllText(product_sample_list, JsonConvert.SerializeObject(products));
         }
-
         //метод, необходимый для записи нового магазина в список
         public static void add_shop_to_list(Shop shop)
         {
             List<Shop> shopList = get_shop_list();
             shopList.Add(shop);
-            File.WriteAllText(shop_list, JsonConvert.SerializeObject(shopList));
+            write_all_shops(shopList);
         }
         //метод, возвращающий список зарегистрированных магазинов
         public static List<Shop> get_shop_list()
@@ -62,6 +50,17 @@ namespace KursachProject.Controller
             List<Product> products = get_product_sample_list();
             products.RemoveAt(sampleIndex);
             write_product_sample_list(products);
+        }
+        //метод, который записывает все магазины в формат json
+        public static void write_all_shops(List<Shop> shopList)
+        {
+            File.WriteAllText(shop_list, JsonConvert.SerializeObject(shopList));
+        }
+        public static void delete_shop_at_index(int index)
+        {
+            List<Shop> shop_list = get_shop_list();
+            shop_list.RemoveAt(index);
+            write_all_shops(shop_list);
         }
     }
 }

@@ -79,6 +79,7 @@ namespace KursachProject
         private void make_first_tab()
         {
             product_sample_cb.Items.Clear();
+            product_sample_cb.Text = null;
             List<Product> products = Serializator.get_product_sample_list();
             for (int i = 0; i < products.Count; i++)
             {
@@ -104,6 +105,7 @@ namespace KursachProject
         }
         private void make_second_tab()
         {
+            shop_list_dg.Rows.Clear();
             List<Shop> shopList = Serializator.get_shop_list();
             for(int i = 0; i < shopList.Count; i++)
             {
@@ -112,6 +114,12 @@ namespace KursachProject
                     shopList[i].products.Count,
                     shopList[i].open_time.ToString(),
                     shopList[i].close_time.ToString());
+            }
+            added_product_sample_cb.Items.Clear();
+            List<Product> products = Serializator.get_product_sample_list();
+            for (int i = 0; i < products.Count; i++)
+            {
+                added_product_sample_cb.Items.Add(products[i].ToString());
             }
         }
         private void make_third_tab()
@@ -196,9 +204,13 @@ namespace KursachProject
 
                     if (phone_number_box.Text.Length > 0 && isGoodPhoneNum)
                     {
-                        Serializator.add_shop_to_list(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
+                        //Serializator.add_shop_to_list(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
+                        //    new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
+                        //    new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList));
+                        reg_pass_form _Form = new reg_pass_form(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
                             new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
                             new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList));
+                        _Form.ShowDialog();
                         make_first_tab();
                     }
                     else
@@ -225,6 +237,16 @@ namespace KursachProject
                 Serializator.delete_product_sample_from_list(product_template_list_dg.CurrentCell.RowIndex);
                 product_template_list_dg.Rows.RemoveAt(product_template_list_dg.CurrentCell.RowIndex);
             }
+        }
+
+        private void add_product_to_selected_shop_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete_selected_shop_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

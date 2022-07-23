@@ -29,6 +29,7 @@ namespace KursachProject.Controller
         public static void add_shop_to_list(Shop shop)
         {
             List<Shop> shopList = get_shop_list();
+            JsonConverter json = new JsonConverter();
             shopList.Add(shop);
             write_all_shops(shopList);
         }
@@ -56,11 +57,25 @@ namespace KursachProject.Controller
         {
             File.WriteAllText(shop_list, JsonConvert.SerializeObject(shopList));
         }
+        //удаляет магазин из списка по индексу
         public static void delete_shop_at_index(int index)
         {
             List<Shop> shop_list = get_shop_list();
             shop_list.RemoveAt(index);
             write_all_shops(shop_list);
+        }
+        // метод, необходимый для перезаписи конкретного магазина
+        public static void rewrite_shop(Shop shop)
+        {
+            List<Shop> shops = get_shop_list();
+            for(int i = 0; i < shops.Count; i++)
+            {
+                if(shop.shop_Id == shops[i].shop_Id)
+                {
+                    shops[i] = shop;
+                }
+            }
+            write_all_shops(shops);
         }
     }
 }

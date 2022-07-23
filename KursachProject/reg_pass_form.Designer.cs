@@ -39,6 +39,7 @@
             // 
             // pass2_tb
             // 
+            this.pass2_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.pass2_tb.Location = new System.Drawing.Point(68, 180);
             this.pass2_tb.Multiline = true;
             this.pass2_tb.Name = "pass2_tb";
@@ -47,6 +48,7 @@
             // 
             // pass1_tb
             // 
+            this.pass1_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.pass1_tb.Location = new System.Drawing.Point(68, 101);
             this.pass1_tb.Multiline = true;
             this.pass1_tb.Name = "pass1_tb";

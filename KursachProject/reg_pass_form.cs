@@ -25,6 +25,7 @@ namespace KursachProject
         {
             if (pass1_tb.Text.Length > 5 && pass2_tb.Text == pass1_tb.Text)
             {
+                current_shop.set_new_password("", pass1_tb.Text);
                 Serializator.add_shop_to_list(current_shop);
                 Close();
             }

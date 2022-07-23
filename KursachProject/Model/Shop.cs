@@ -17,7 +17,9 @@ namespace KursachProject.Model
         //список кортежей с количеством продуктов и описанием продукта
         public List<Tuple<int, Product>> products;
 
-        public Shop(int shop_Id, string shop_name, string shop_specialization, string phone_number, Time open_time,Time close_time, Adress adress, List<Tuple<int, Product>> products)
+        private string password;
+
+        public Shop(int shop_Id, string shop_name, string shop_specialization, string phone_number, Time open_time,Time close_time, Adress adress, List<Tuple<int, Product>> products, string password)
         {
             this.shop_Id = shop_Id;
             this.shop_name = shop_name;
@@ -34,6 +36,25 @@ namespace KursachProject.Model
                 products[i] = Tuple.Create(products[i].Item1, product);
             }
 
+            this.password = password;
+        }
+        public void change_password(string new_password)
+        {
+            this.password = new_password;
+        }
+        public bool give_access(string pass)
+        {
+            if (pass == password) return true;
+            else return false;
+        }
+        public bool set_new_password(string pass, string new_pass)
+        {
+            if (pass == password)
+            {
+                password = pass;
+                return true;
+            }
+            else return false;
         }
     }
     public struct Adress

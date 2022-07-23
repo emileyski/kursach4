@@ -56,6 +56,12 @@ namespace KursachProject.Model
         {
             return product_name + ": " + product_price;
         }
+        public int time_to_spoil()
+        {
+            DateTime dateTime = new DateTime(date_of_manufacture.year, date_of_manufacture.month, date_of_manufacture.day);
+            int time = (365 - DateTime.Now.Year + DateTime.Now.DayOfYear) - (365 * dateTime.Year + dateTime.DayOfYear);
+            return time;
+        }
     }
     
 }

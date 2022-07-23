@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -49,7 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="all_shop_info_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="all_shop_info_form.Designer.cs">
+      <DependentUpon>all_shop_info_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\Serializator.cs" />
+    <Compile Include="edit_shop_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_shop_panel.Designer.cs">
+      <DependentUpon>edit_shop_panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +79,12 @@
     <Compile Include="reg_pass_form.Designer.cs">
       <DependentUpon>reg_pass_form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="all_shop_info_form.resx">
+      <DependentUpon>all_shop_info_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edit_shop_panel.resx">
+      <DependentUpon>edit_shop_panel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

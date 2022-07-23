@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using KursachProject.Controller;
 using KursachProject.Model;
+using Microsoft.VisualBasic;
 
 namespace KursachProject
 {
@@ -99,7 +94,7 @@ namespace KursachProject
             number_tb.Clear();
             product_count_tb.Clear();
             cbStartTimeHour.Text = "год.";
-            cbStartTimeHour.Text = "хв.";
+            cbStartTimeMinute.Text = "хв.";
             cbEndTimeHour.Text = "год.";
             cbEndTimeMinute.Text = "хв.";
         }
@@ -121,6 +116,7 @@ namespace KursachProject
             {
                 added_product_sample_cb.Items.Add(products[i].ToString());
             }
+            added_product_count_tb.Clear();
         }
         private void make_third_tab()
         {
@@ -204,12 +200,9 @@ namespace KursachProject
 
                     if (phone_number_box.Text.Length > 0 && isGoodPhoneNum)
                     {
-                        //Serializator.add_shop_to_list(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
-                        //    new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
-                        //    new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList));
                         reg_pass_form _Form = new reg_pass_form(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
                             new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
-                            new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList));
+                            new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList,""));
                         _Form.ShowDialog();
                         make_first_tab();
                     }
@@ -246,7 +239,40 @@ namespace KursachProject
 
         private void delete_selected_shop_Click(object sender, EventArgs e)
         {
+            if (shop_list_dg.Rows.Count > 0)
+            {
+                string password;
+                password = Interaction.InputBox("Введіть пароль", "Пароль");
+                if (Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex].give_access(password))
+                {
 
+                    Serializator.delete_shop_at_index(shop_list_dg.CurrentCell.RowIndex);
+                    make_second_tab();
+                }
+            }
+            else
+                MessageBox.Show("Список магазинів і так пустий", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void edit_selected_shop_btn_Click(object sender, EventArgs e)
+        {
+
+            if (shop_list_dg.Rows.Count > 0)
+            {
+                string password;
+                password = Interaction.InputBox("Введіть пароль", "Пароль");
+                if (Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex].give_access(password))
+                {
+                    Hide();
+                    edit_shop_panel panel = new edit_shop_panel(Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex],password);
+                    panel.ShowDialog();
+                    Show();
+                }
+                else
+                    MessageBox.Show("Ви ввели некоректний пароль", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+                MessageBox.Show("Неможливо вибрати магазин в пустому списку.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

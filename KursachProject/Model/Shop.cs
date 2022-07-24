@@ -69,7 +69,7 @@ namespace KursachProject.Model
                     && adress.Equals(shop.adress)
                     && phone_number == shop.phone_number
                     && open_time.Equals(shop.open_time) && close_time.Equals(shop.close_time)
-                    && products == shop.products
+                    && products.Count == shop.products.Count
                     && password == shop.password)
                 {
                     return true;
@@ -106,8 +106,15 @@ namespace KursachProject.Model
         public int minute;
         public Time(int hour, int minute)
         {
-            this.hour = hour;
-            this.minute = minute;
+            if (hour > 23)
+                this.hour = hour;
+
+            else
+                this.hour = 0;
+            if (minute > 59)
+                this.minute = minute;
+            else
+                this.minute = 0;
         }
         public override string ToString()
         {

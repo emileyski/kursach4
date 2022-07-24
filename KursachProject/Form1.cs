@@ -10,7 +10,9 @@ namespace KursachProject
     public partial class Form1 : Form
     {
         //список продуктов и их колво, необходимый для редактирования здесь и сейчас
+
         List<Tuple<int, Product>> currentProductList;
+
         public Form1()
         {
             InitializeComponent();
@@ -269,6 +271,14 @@ namespace KursachProject
             }
             else
                 MessageBox.Show("Неможливо вибрати магазин в пустому списку.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void show_all_info_about_shop_btn_Click(object sender, EventArgs e)
+        {
+            Hide();
+            all_shop_info_form form = new all_shop_info_form(Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex]);
+            form.ShowDialog();
+            Show();
         }
     }
 }

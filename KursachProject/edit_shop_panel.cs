@@ -12,6 +12,7 @@ namespace KursachProject
     {
         private Shop shop;
         private string password;
+        private int _product_count;
 
         internal edit_shop_panel(Shop shop)
         {
@@ -65,6 +66,8 @@ namespace KursachProject
                 added_product_sample_cb.Items.Add(products[i].ToString());
             }
             product_count_tb.Clear();
+
+            _product_count = shop.products.Count;
         }
 
         private void is_ready_btn_Click(object sender, EventArgs e)
@@ -79,11 +82,12 @@ namespace KursachProject
                 Shop newShop = new Shop(shop.shop_Id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
                                 new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
                                 new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), shop.products, password);
-                if (newShop.Equals(shop))
+                if (newShop.Equals(shop) && _product_count == shop.products.Count)
                 {
                     DialogResult result = MessageBox.Show("Ви ніяк не змінили поточний магазин, Ви хочете вийти не змінивши нічого?", "Ви впевнені?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.Yes)
                     {
+                        Serializator.rewrite_shop(newShop);
                         Close();
                     }
                 }
@@ -170,3 +174,4 @@ namespace KursachProject
         }
     }
 }
+//финальная версия

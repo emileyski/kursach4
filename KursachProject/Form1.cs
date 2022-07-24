@@ -110,13 +110,6 @@ namespace KursachProject
                     shopList[i].open_time.ToString(),
                     shopList[i].close_time.ToString());
             }
-            added_product_sample_cb.Items.Clear();
-            List<Product> products = Serializator.get_product_sample_list();
-            for (int i = 0; i < products.Count; i++)
-            {
-                added_product_sample_cb.Items.Add(products[i].ToString());
-            }
-            added_product_count_tb.Clear();
         }
         private void make_third_tab()
         {
@@ -202,7 +195,7 @@ namespace KursachProject
                     {
                         reg_pass_form _Form = new reg_pass_form(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
                             new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
-                            new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList,""));
+                            new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList,Serializator.getHash("")));
                         _Form.ShowDialog();
                         make_first_tab();
                     }
@@ -212,7 +205,6 @@ namespace KursachProject
                 catch
                 {
                     MessageBox.Show("Ви ввели якесь поле некоректно", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
             }
             else
@@ -245,10 +237,11 @@ namespace KursachProject
                 password = Interaction.InputBox("Введіть пароль", "Пароль");
                 if (Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex].give_access(password))
                 {
-
                     Serializator.delete_shop_at_index(shop_list_dg.CurrentCell.RowIndex);
                     make_second_tab();
                 }
+                else
+                    MessageBox.Show("Ви ввели некоректний пароль", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
                 MessageBox.Show("Список магазинів і так пустий", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -261,12 +254,15 @@ namespace KursachProject
             {
                 string password;
                 password = Interaction.InputBox("Введіть пароль", "Пароль");
+                //MessageBox.Show(password + "\n" + password.Length);
+                
                 if (Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex].give_access(password))
                 {
                     Hide();
-                    edit_shop_panel panel = new edit_shop_panel(Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex],password);
+                    edit_shop_panel panel = new edit_shop_panel(Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex]);
                     panel.ShowDialog();
                     Show();
+                    make_second_tab();
                 }
                 else
                     MessageBox.Show("Ви ввели некоректний пароль", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);

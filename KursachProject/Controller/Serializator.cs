@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using KursachProject.Model;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace KursachProject.Controller
 {
@@ -13,6 +12,18 @@ namespace KursachProject.Controller
     {
         const string product_sample_list = "product_sample_list.json";
         const string shop_list = "shop_list.json";
+
+        //метод, который хеширует пароли
+        public static string getHash(string input)
+        {
+            var md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+            for(int i = 0; i < input.Length; i++)
+            {
+                hash = md5.ComputeHash(Encoding.UTF8.GetBytes(Convert.ToBase64String(hash)));
+            }
+            return Convert.ToBase64String(hash);
+        }
 
         //метод, необходимый для записи в шаблон продуктов нового
         public static void add_product_to_sample(Product product)
@@ -29,7 +40,6 @@ namespace KursachProject.Controller
         public static void add_shop_to_list(Shop shop)
         {
             List<Shop> shopList = get_shop_list();
-            JsonConverter json = new JsonConverter();
             shopList.Add(shop);
             write_all_shops(shopList);
         }

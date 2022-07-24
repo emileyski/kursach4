@@ -36,14 +36,6 @@ namespace KursachProject.Model
         //срок годности выраженый в днях
         public int expiration_date;
 
-
-        //public Product(string product_name, string product_description, string shop_name, int product_price)
-        //{
-        //    this.product_name = product_name;
-        //    this.product_description = product_description;
-        //    this.shop_name = shop_name;
-        //    this.product_price = product_price;
-        //}
         public Product(string product_name, string product_description, float product_price, int expiration_date)
         {
             this.product_name = product_name;
@@ -59,8 +51,27 @@ namespace KursachProject.Model
         public int time_to_spoil()
         {
             DateTime dateTime = new DateTime(date_of_manufacture.year, date_of_manufacture.month, date_of_manufacture.day);
-            int time = (365 - DateTime.Now.Year + DateTime.Now.DayOfYear) - (365 * dateTime.Year + dateTime.DayOfYear);
+            int time = (365 * DateTime.Now.Year + DateTime.Now.DayOfYear+ expiration_date) - (365 * dateTime.Year + dateTime.DayOfYear);
             return time;
+        }
+        public override bool Equals(object obj)
+        {
+            try
+            {
+                Product product = (Product)obj;
+                if (product_name == product.product_name
+                    && product_description == product.product_description
+                    && shop_id == product.shop_id
+                    && product_price == product.product_price
+                    && date_of_manufacture.Equals(product.date_of_manufacture)
+                    && expiration_date == product.expiration_date)
+                    return true;
+                else return false;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
     

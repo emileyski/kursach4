@@ -76,15 +76,6 @@
             this.edit_selected_shop_btn = new System.Windows.Forms.Button();
             this.delete_selected_shop = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.add_product_to_selected_shop_btn = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.added_product_count_tb = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.added_product_sample_cb = new System.Windows.Forms.ComboBox();
             this.shop_list_dg = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -744,15 +735,6 @@
             this.tabPage3.Controls.Add(this.edit_selected_shop_btn);
             this.tabPage3.Controls.Add(this.delete_selected_shop);
             this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.panel10);
-            this.tabPage3.Controls.Add(this.panel9);
-            this.tabPage3.Controls.Add(this.add_product_to_selected_shop_btn);
-            this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.dateTimePicker2);
-            this.tabPage3.Controls.Add(this.added_product_count_tb);
-            this.tabPage3.Controls.Add(this.label19);
-            this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Controls.Add(this.added_product_sample_cb);
             this.tabPage3.Controls.Add(this.shop_list_dg);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
@@ -763,11 +745,12 @@
             // edit_selected_shop_btn
             // 
             this.edit_selected_shop_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.edit_selected_shop_btn.Dock = System.Windows.Forms.DockStyle.Left;
             this.edit_selected_shop_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_selected_shop_btn.ForeColor = System.Drawing.Color.White;
-            this.edit_selected_shop_btn.Location = new System.Drawing.Point(526, 73);
+            this.edit_selected_shop_btn.Location = new System.Drawing.Point(544, 458);
             this.edit_selected_shop_btn.Name = "edit_selected_shop_btn";
-            this.edit_selected_shop_btn.Size = new System.Drawing.Size(283, 69);
+            this.edit_selected_shop_btn.Size = new System.Drawing.Size(272, 66);
             this.edit_selected_shop_btn.TabIndex = 34;
             this.edit_selected_shop_btn.Text = "Редагувати вибраний магазин";
             this.edit_selected_shop_btn.UseVisualStyleBackColor = false;
@@ -776,11 +759,12 @@
             // delete_selected_shop
             // 
             this.delete_selected_shop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.delete_selected_shop.Dock = System.Windows.Forms.DockStyle.Left;
             this.delete_selected_shop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_selected_shop.ForeColor = System.Drawing.Color.White;
-            this.delete_selected_shop.Location = new System.Drawing.Point(526, 148);
+            this.delete_selected_shop.Location = new System.Drawing.Point(272, 458);
             this.delete_selected_shop.Name = "delete_selected_shop";
-            this.delete_selected_shop.Size = new System.Drawing.Size(283, 64);
+            this.delete_selected_shop.Size = new System.Drawing.Size(272, 66);
             this.delete_selected_shop.TabIndex = 34;
             this.delete_selected_shop.Text = "Видалити магазин із списку";
             this.delete_selected_shop.UseVisualStyleBackColor = false;
@@ -789,92 +773,15 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(526, 3);
+            this.button1.Location = new System.Drawing.Point(0, 458);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(283, 64);
+            this.button1.Size = new System.Drawing.Size(272, 66);
             this.button1.TabIndex = 34;
             this.button1.Text = "Переглянути всю інформацію про магазин";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel10.Location = new System.Drawing.Point(510, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(10, 521);
-            this.panel10.TabIndex = 33;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel9.Location = new System.Drawing.Point(519, 289);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(298, 10);
-            this.panel9.TabIndex = 32;
-            // 
-            // add_product_to_selected_shop_btn
-            // 
-            this.add_product_to_selected_shop_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.add_product_to_selected_shop_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_product_to_selected_shop_btn.ForeColor = System.Drawing.Color.White;
-            this.add_product_to_selected_shop_btn.Location = new System.Drawing.Point(560, 456);
-            this.add_product_to_selected_shop_btn.Name = "add_product_to_selected_shop_btn";
-            this.add_product_to_selected_shop_btn.Size = new System.Drawing.Size(236, 64);
-            this.add_product_to_selected_shop_btn.TabIndex = 31;
-            this.add_product_to_selected_shop_btn.Text = "Додати товар до вибраного магазину\r\n\r\n";
-            this.add_product_to_selected_shop_btn.UseVisualStyleBackColor = false;
-            this.add_product_to_selected_shop_btn.Click += new System.EventHandler(this.add_product_to_selected_shop_btn_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(519, 392);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(195, 25);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "Дата виготовлення";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(535, 420);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(278, 30);
-            this.dateTimePicker2.TabIndex = 29;
-            // 
-            // added_product_count_tb
-            // 
-            this.added_product_count_tb.Location = new System.Drawing.Point(698, 359);
-            this.added_product_count_tb.Name = "added_product_count_tb";
-            this.added_product_count_tb.Size = new System.Drawing.Size(115, 30);
-            this.added_product_count_tb.TabIndex = 28;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(519, 359);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(164, 25);
-            this.label19.TabIndex = 27;
-            this.label19.Text = "Кількість товару";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(519, 308);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(153, 25);
-            this.label20.TabIndex = 26;
-            this.label20.Text = "Виберіть товар";
-            // 
-            // added_product_sample_cb
-            // 
-            this.added_product_sample_cb.FormattingEnabled = true;
-            this.added_product_sample_cb.Location = new System.Drawing.Point(681, 305);
-            this.added_product_sample_cb.Name = "added_product_sample_cb";
-            this.added_product_sample_cb.Size = new System.Drawing.Size(132, 33);
-            this.added_product_sample_cb.TabIndex = 25;
             // 
             // shop_list_dg
             // 
@@ -885,14 +792,14 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.close_shop_time_column});
-            this.shop_list_dg.Dock = System.Windows.Forms.DockStyle.Left;
+            this.shop_list_dg.Dock = System.Windows.Forms.DockStyle.Top;
             this.shop_list_dg.Location = new System.Drawing.Point(0, 0);
             this.shop_list_dg.MultiSelect = false;
             this.shop_list_dg.Name = "shop_list_dg";
             this.shop_list_dg.RowHeadersVisible = false;
             this.shop_list_dg.RowHeadersWidth = 51;
             this.shop_list_dg.RowTemplate.Height = 24;
-            this.shop_list_dg.Size = new System.Drawing.Size(504, 524);
+            this.shop_list_dg.Size = new System.Drawing.Size(817, 458);
             this.shop_list_dg.TabIndex = 24;
             // 
             // dataGridViewTextBoxColumn2
@@ -1120,7 +1027,6 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shop_list_dg)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -1199,15 +1105,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn close_shop_time_column;
-        private System.Windows.Forms.Button add_product_to_selected_shop_btn;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox added_product_count_tb;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox added_product_sample_cb;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button edit_selected_shop_btn;
         private System.Windows.Forms.Button delete_selected_shop;
         private System.Windows.Forms.Button button1;

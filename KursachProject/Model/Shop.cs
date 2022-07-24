@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using KursachProject.Controller;
 
 namespace KursachProject.Model
 {
@@ -17,7 +19,7 @@ namespace KursachProject.Model
         //список кортежей с количеством продуктов и описанием продукта
         public List<Tuple<int, Product>> products;
 
-        private string password;
+        public string password;
 
         public Shop(int shop_Id, string shop_name, string shop_specialization, string phone_number, Time open_time,Time close_time, Adress adress, List<Tuple<int, Product>> products, string password)
         {
@@ -38,23 +40,48 @@ namespace KursachProject.Model
 
             this.password = password;
         }
-        public void change_password(string new_password)
-        {
-            this.password = new_password;
-        }
         public bool give_access(string pass)
         {
-            if (pass == password) return true;
+            if (Serializator.getHash(pass) == password) return true;
             else return false;
         }
         public bool set_new_password(string pass, string new_pass)
         {
-            if (pass == password)
+            //if (Serializator.getHash(pass) == password)
+            //{
+            //    MessageBox.Show("gththtr");
+            //}
+            if (Serializator.getHash(pass) == password)
             {
-                password = pass;
+                password = Serializator.getHash(new_pass);
                 return true;
             }
             else return false;
+        }
+        public override bool Equals(object obj)
+        {
+            try
+            {
+                Shop shop = (Shop)obj;
+                if (shop_name == shop.shop_name
+                    && shop_Id == shop.shop_Id
+                    && shop_specialization == shop.shop_specialization
+                    && adress.Equals(shop.adress)
+                    && phone_number == shop.phone_number
+                    && open_time.Equals(shop.open_time) && close_time.Equals(shop.close_time)
+                    && products == shop.products
+                    && password == shop.password)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch
+            {
+                return false;
+            }
+
+            
         }
     }
     public struct Adress
@@ -90,34 +117,5 @@ namespace KursachProject.Model
             return time;
         }
     }
-    //  public struct Time
-    //  {
-    //      int hour;
-    //      int minute;
-    //      Time() { }
-    //      Time(int hour, int minute)
-    //      {
-    //          this->hour = hour;
-    //          this->minute = minute;
-    //      }
 
-    //      string ToString()
-    //      {
-    //          ostringstream converter;
-    //          converter << hour;
-    //          string a = (hour < 10) ? "0" + converter.str() : converter.str();
-    //          a += ":";
-    //          converter = ostringstream();
-    //          converter << minute;
-    //          a += (minute < 10) ? "0" + converter.str() : converter.str();
-    //          return a;
-    //      }
-    //      bool operator ==(const Time& other) {
-    //if (this->hour == other.hour && this->minute == other.minute) {
-    //          return true;
-    //      }
-    //else
-    //	return false;
-    //      }
-    //  };
 }

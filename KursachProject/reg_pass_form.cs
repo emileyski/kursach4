@@ -18,6 +18,8 @@ namespace KursachProject
         internal reg_pass_form(Shop shop)
         {
             InitializeComponent();
+            pass1_tb.PasswordChar = '*';
+            pass2_tb.PasswordChar = '*';
             current_shop = shop;
         }
 

@@ -39,6 +39,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.delete_product_from_list_btn = new System.Windows.Forms.Button();
             this.current_product_list_dg = new System.Windows.Forms.DataGridView();
+            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_of_manufacturing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiration_date_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.days = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone_number_box = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -58,12 +64,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_of_manufacturing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expiration_date_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.days = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_product_to_selected_shop_btn = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.product_count_tb = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.added_product_sample_cb = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.edit_password_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,12 +81,12 @@
             this.is_ready_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.is_ready_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.is_ready_btn.ForeColor = System.Drawing.Color.White;
-            this.is_ready_btn.Location = new System.Drawing.Point(696, 150);
+            this.is_ready_btn.Location = new System.Drawing.Point(395, 150);
             this.is_ready_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.is_ready_btn.Name = "is_ready_btn";
-            this.is_ready_btn.Size = new System.Drawing.Size(102, 35);
+            this.is_ready_btn.Size = new System.Drawing.Size(183, 35);
             this.is_ready_btn.TabIndex = 23;
-            this.is_ready_btn.Text = "Готово";
+            this.is_ready_btn.Text = "Зберегти зміни";
             this.is_ready_btn.UseVisualStyleBackColor = false;
             this.is_ready_btn.Click += new System.EventHandler(this.is_ready_btn_Click);
             // 
@@ -344,9 +353,9 @@
             this.delete_product_from_list_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.delete_product_from_list_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_product_from_list_btn.ForeColor = System.Drawing.Color.White;
-            this.delete_product_from_list_btn.Location = new System.Drawing.Point(395, 152);
+            this.delete_product_from_list_btn.Location = new System.Drawing.Point(673, 390);
             this.delete_product_from_list_btn.Name = "delete_product_from_list_btn";
-            this.delete_product_from_list_btn.Size = new System.Drawing.Size(174, 35);
+            this.delete_product_from_list_btn.Size = new System.Drawing.Size(126, 73);
             this.delete_product_from_list_btn.TabIndex = 52;
             this.delete_product_from_list_btn.Text = "Видалити товар";
             this.delete_product_from_list_btn.UseVisualStyleBackColor = false;
@@ -362,15 +371,62 @@
             this.date_of_manufacturing,
             this.expiration_date_column,
             this.days});
-            this.current_product_list_dg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.current_product_list_dg.Location = new System.Drawing.Point(0, 201);
             this.current_product_list_dg.MultiSelect = false;
             this.current_product_list_dg.Name = "current_product_list_dg";
             this.current_product_list_dg.RowHeadersVisible = false;
             this.current_product_list_dg.RowHeadersWidth = 51;
             this.current_product_list_dg.RowTemplate.Height = 24;
-            this.current_product_list_dg.Size = new System.Drawing.Size(811, 274);
+            this.current_product_list_dg.Size = new System.Drawing.Size(504, 274);
             this.current_product_list_dg.TabIndex = 51;
+            // 
+            // product_name
+            // 
+            this.product_name.HeaderText = "Товар";
+            this.product_name.MinimumWidth = 6;
+            this.product_name.Name = "product_name";
+            this.product_name.ReadOnly = true;
+            this.product_name.Width = 125;
+            // 
+            // product_count
+            // 
+            this.product_count.HeaderText = "Кількість";
+            this.product_count.MinimumWidth = 6;
+            this.product_count.Name = "product_count";
+            this.product_count.ReadOnly = true;
+            this.product_count.Width = 125;
+            // 
+            // product_price
+            // 
+            this.product_price.HeaderText = "Ціна";
+            this.product_price.MinimumWidth = 6;
+            this.product_price.Name = "product_price";
+            this.product_price.ReadOnly = true;
+            this.product_price.Width = 125;
+            // 
+            // date_of_manufacturing
+            // 
+            this.date_of_manufacturing.HeaderText = "Дата виготовлення";
+            this.date_of_manufacturing.MinimumWidth = 6;
+            this.date_of_manufacturing.Name = "date_of_manufacturing";
+            this.date_of_manufacturing.ReadOnly = true;
+            this.date_of_manufacturing.Width = 125;
+            // 
+            // expiration_date_column
+            // 
+            this.expiration_date_column.HeaderText = "Термін придатності";
+            this.expiration_date_column.MinimumWidth = 6;
+            this.expiration_date_column.Name = "expiration_date_column";
+            this.expiration_date_column.ReadOnly = true;
+            this.expiration_date_column.Width = 125;
+            // 
+            // days
+            // 
+            this.days.HeaderText = "Днів до псування";
+            this.days.MinimumWidth = 6;
+            this.days.Name = "days";
+            this.days.ReadOnly = true;
+            this.days.Width = 125;
             // 
             // phone_number_box
             // 
@@ -528,53 +584,89 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Назва магазину";
             // 
-            // product_name
+            // add_product_to_selected_shop_btn
             // 
-            this.product_name.HeaderText = "Товар";
-            this.product_name.MinimumWidth = 6;
-            this.product_name.Name = "product_name";
-            this.product_name.ReadOnly = true;
-            this.product_name.Width = 125;
+            this.add_product_to_selected_shop_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.add_product_to_selected_shop_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_product_to_selected_shop_btn.ForeColor = System.Drawing.Color.White;
+            this.add_product_to_selected_shop_btn.Location = new System.Drawing.Point(535, 390);
+            this.add_product_to_selected_shop_btn.Name = "add_product_to_selected_shop_btn";
+            this.add_product_to_selected_shop_btn.Size = new System.Drawing.Size(113, 73);
+            this.add_product_to_selected_shop_btn.TabIndex = 65;
+            this.add_product_to_selected_shop_btn.Text = "Додати товар";
+            this.add_product_to_selected_shop_btn.UseVisualStyleBackColor = false;
+            this.add_product_to_selected_shop_btn.Click += new System.EventHandler(this.add_product_to_selected_shop_btn_Click);
             // 
-            // product_count
+            // label18
             // 
-            this.product_count.HeaderText = "Кількість";
-            this.product_count.MinimumWidth = 6;
-            this.product_count.Name = "product_count";
-            this.product_count.ReadOnly = true;
-            this.product_count.Width = 125;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(562, 288);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(195, 25);
+            this.label18.TabIndex = 64;
+            this.label18.Text = "Дата виготовлення";
             // 
-            // product_price
+            // dateTimePicker1
             // 
-            this.product_price.HeaderText = "Ціна";
-            this.product_price.MinimumWidth = 6;
-            this.product_price.Name = "product_price";
-            this.product_price.ReadOnly = true;
-            this.product_price.Width = 125;
+            this.dateTimePicker1.Location = new System.Drawing.Point(526, 316);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(278, 30);
+            this.dateTimePicker1.TabIndex = 63;
             // 
-            // date_of_manufacturing
+            // product_count_tb
             // 
-            this.date_of_manufacturing.HeaderText = "Дата виготовлення";
-            this.date_of_manufacturing.MinimumWidth = 6;
-            this.date_of_manufacturing.Name = "date_of_manufacturing";
-            this.date_of_manufacturing.ReadOnly = true;
-            this.date_of_manufacturing.Width = 125;
+            this.product_count_tb.Location = new System.Drawing.Point(689, 255);
+            this.product_count_tb.Name = "product_count_tb";
+            this.product_count_tb.Size = new System.Drawing.Size(115, 30);
+            this.product_count_tb.TabIndex = 62;
             // 
-            // expiration_date_column
+            // label19
             // 
-            this.expiration_date_column.HeaderText = "Термін придатності";
-            this.expiration_date_column.MinimumWidth = 6;
-            this.expiration_date_column.Name = "expiration_date_column";
-            this.expiration_date_column.ReadOnly = true;
-            this.expiration_date_column.Width = 125;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(521, 255);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(164, 25);
+            this.label19.TabIndex = 61;
+            this.label19.Text = "Кількість товару";
             // 
-            // days
+            // label20
             // 
-            this.days.HeaderText = "Днів до псування";
-            this.days.MinimumWidth = 6;
-            this.days.Name = "days";
-            this.days.ReadOnly = true;
-            this.days.Width = 125;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(521, 209);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(153, 25);
+            this.label20.TabIndex = 60;
+            this.label20.Text = "Виберіть товар";
+            // 
+            // added_product_sample_cb
+            // 
+            this.added_product_sample_cb.FormattingEnabled = true;
+            this.added_product_sample_cb.Location = new System.Drawing.Point(672, 201);
+            this.added_product_sample_cb.Name = "added_product_sample_cb";
+            this.added_product_sample_cb.Size = new System.Drawing.Size(132, 33);
+            this.added_product_sample_cb.TabIndex = 59;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel1.Location = new System.Drawing.Point(510, 193);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 282);
+            this.panel1.TabIndex = 44;
+            // 
+            // edit_password_btn
+            // 
+            this.edit_password_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.edit_password_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_password_btn.ForeColor = System.Drawing.Color.White;
+            this.edit_password_btn.Location = new System.Drawing.Point(621, 149);
+            this.edit_password_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.edit_password_btn.Name = "edit_password_btn";
+            this.edit_password_btn.Size = new System.Drawing.Size(183, 35);
+            this.edit_password_btn.TabIndex = 66;
+            this.edit_password_btn.Text = "Змінити пароль";
+            this.edit_password_btn.UseVisualStyleBackColor = false;
+            this.edit_password_btn.Click += new System.EventHandler(this.edit_password_btn_Click);
             // 
             // edit_shop_panel
             // 
@@ -582,6 +674,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(811, 475);
+            this.Controls.Add(this.edit_password_btn);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.add_product_to_selected_shop_btn);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.product_count_tb);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.added_product_sample_cb);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.cbEndTimeMinute);
             this.Controls.Add(this.cbEndTimeHour);
@@ -615,6 +716,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "edit_shop_panel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Змінити магазин";
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).EndInit();
             this.ResumeLayout(false);
@@ -660,5 +762,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date_of_manufacturing;
         private System.Windows.Forms.DataGridViewTextBoxColumn expiration_date_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn days;
+        private System.Windows.Forms.Button add_product_to_selected_shop_btn;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox product_count_tb;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox added_product_sample_cb;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button edit_password_btn;
     }
 }

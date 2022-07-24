@@ -56,6 +56,7 @@
     <Compile Include="all_shop_info_form.Designer.cs">
       <DependentUpon>all_shop_info_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\InfoFinder.cs" />
     <Compile Include="Controller\Serializator.cs" />
     <Compile Include="edit_shop_panel.cs">
       <SubType>Form</SubType>

@@ -157,9 +157,7 @@ namespace KursachProject
                     string ConfirmNewPassword = Interaction.InputBox("Введіть новий пароль", "Пароль");
                     if (newPassword.Length > 5 && ConfirmNewPassword == newPassword)
                     {
-                        MessageBox.Show(password);
                         password = Serializator.getHash(newPassword);
-                        MessageBox.Show(password);
                         MessageBox.Show("Ви успішно змінили пароль", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         break;

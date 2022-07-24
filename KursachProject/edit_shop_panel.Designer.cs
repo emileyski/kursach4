@@ -39,12 +39,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.delete_product_from_list_btn = new System.Windows.Forms.Button();
             this.current_product_list_dg = new System.Windows.Forms.DataGridView();
-            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_of_manufacturing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expiration_date_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.days = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone_number_box = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -73,6 +67,12 @@
             this.added_product_sample_cb = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.edit_password_btn = new System.Windows.Forms.Button();
+            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_of_manufacturing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiration_date_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.days = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -380,54 +380,6 @@
             this.current_product_list_dg.Size = new System.Drawing.Size(504, 274);
             this.current_product_list_dg.TabIndex = 51;
             // 
-            // product_name
-            // 
-            this.product_name.HeaderText = "Товар";
-            this.product_name.MinimumWidth = 6;
-            this.product_name.Name = "product_name";
-            this.product_name.ReadOnly = true;
-            this.product_name.Width = 125;
-            // 
-            // product_count
-            // 
-            this.product_count.HeaderText = "Кількість";
-            this.product_count.MinimumWidth = 6;
-            this.product_count.Name = "product_count";
-            this.product_count.ReadOnly = true;
-            this.product_count.Width = 125;
-            // 
-            // product_price
-            // 
-            this.product_price.HeaderText = "Ціна";
-            this.product_price.MinimumWidth = 6;
-            this.product_price.Name = "product_price";
-            this.product_price.ReadOnly = true;
-            this.product_price.Width = 125;
-            // 
-            // date_of_manufacturing
-            // 
-            this.date_of_manufacturing.HeaderText = "Дата виготовлення";
-            this.date_of_manufacturing.MinimumWidth = 6;
-            this.date_of_manufacturing.Name = "date_of_manufacturing";
-            this.date_of_manufacturing.ReadOnly = true;
-            this.date_of_manufacturing.Width = 125;
-            // 
-            // expiration_date_column
-            // 
-            this.expiration_date_column.HeaderText = "Термін придатності";
-            this.expiration_date_column.MinimumWidth = 6;
-            this.expiration_date_column.Name = "expiration_date_column";
-            this.expiration_date_column.ReadOnly = true;
-            this.expiration_date_column.Width = 125;
-            // 
-            // days
-            // 
-            this.days.HeaderText = "Днів до псування";
-            this.days.MinimumWidth = 6;
-            this.days.Name = "days";
-            this.days.ReadOnly = true;
-            this.days.Width = 125;
-            // 
             // phone_number_box
             // 
             this.phone_number_box.Location = new System.Drawing.Point(599, 102);
@@ -668,6 +620,60 @@
             this.edit_password_btn.UseVisualStyleBackColor = false;
             this.edit_password_btn.Click += new System.EventHandler(this.edit_password_btn_Click);
             // 
+            // product_name
+            // 
+            this.product_name.HeaderText = "Товар";
+            this.product_name.MinimumWidth = 6;
+            this.product_name.Name = "product_name";
+            this.product_name.ReadOnly = true;
+            this.product_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.product_name.Width = 125;
+            // 
+            // product_count
+            // 
+            this.product_count.HeaderText = "Кількість";
+            this.product_count.MinimumWidth = 6;
+            this.product_count.Name = "product_count";
+            this.product_count.ReadOnly = true;
+            this.product_count.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.product_count.Width = 125;
+            // 
+            // product_price
+            // 
+            this.product_price.HeaderText = "Ціна";
+            this.product_price.MinimumWidth = 6;
+            this.product_price.Name = "product_price";
+            this.product_price.ReadOnly = true;
+            this.product_price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.product_price.Width = 125;
+            // 
+            // date_of_manufacturing
+            // 
+            this.date_of_manufacturing.HeaderText = "Дата виготовлення";
+            this.date_of_manufacturing.MinimumWidth = 6;
+            this.date_of_manufacturing.Name = "date_of_manufacturing";
+            this.date_of_manufacturing.ReadOnly = true;
+            this.date_of_manufacturing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.date_of_manufacturing.Width = 125;
+            // 
+            // expiration_date_column
+            // 
+            this.expiration_date_column.HeaderText = "Термін придатності";
+            this.expiration_date_column.MinimumWidth = 6;
+            this.expiration_date_column.Name = "expiration_date_column";
+            this.expiration_date_column.ReadOnly = true;
+            this.expiration_date_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.expiration_date_column.Width = 125;
+            // 
+            // days
+            // 
+            this.days.HeaderText = "Днів до псування";
+            this.days.MinimumWidth = 6;
+            this.days.Name = "days";
+            this.days.ReadOnly = true;
+            this.days.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.days.Width = 125;
+            // 
             // edit_shop_panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -756,12 +762,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date_of_manufacturing;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expiration_date_column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn days;
         private System.Windows.Forms.Button add_product_to_selected_shop_btn;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -771,5 +771,11 @@
         private System.Windows.Forms.ComboBox added_product_sample_cb;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button edit_password_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date_of_manufacturing;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expiration_date_column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn days;
     }
 }

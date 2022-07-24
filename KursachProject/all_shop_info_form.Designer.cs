@@ -48,8 +48,11 @@
             this.close_time_lb = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.phone_lb = new System.Windows.Forms.Label();
+            this.all_about_product_btn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // current_product_list_dg
@@ -62,14 +65,14 @@
             this.date_of_manufacturing,
             this.expiration_date_column,
             this.days});
-            this.current_product_list_dg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.current_product_list_dg.Location = new System.Drawing.Point(0, 171);
+            this.current_product_list_dg.Dock = System.Windows.Forms.DockStyle.Left;
+            this.current_product_list_dg.Location = new System.Drawing.Point(0, 0);
             this.current_product_list_dg.MultiSelect = false;
             this.current_product_list_dg.Name = "current_product_list_dg";
             this.current_product_list_dg.RowHeadersVisible = false;
             this.current_product_list_dg.RowHeadersWidth = 51;
             this.current_product_list_dg.RowTemplate.Height = 24;
-            this.current_product_list_dg.Size = new System.Drawing.Size(682, 282);
+            this.current_product_list_dg.Size = new System.Drawing.Size(613, 279);
             this.current_product_list_dg.TabIndex = 52;
             // 
             // product_name
@@ -274,14 +277,39 @@
             this.phone_lb.Text = "Номер телефону";
             this.phone_lb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // all_about_product_btn
+            // 
+            this.all_about_product_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.all_about_product_btn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.all_about_product_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.all_about_product_btn.ForeColor = System.Drawing.Color.White;
+            this.all_about_product_btn.Location = new System.Drawing.Point(612, 0);
+            this.all_about_product_btn.Name = "all_about_product_btn";
+            this.all_about_product_btn.Size = new System.Drawing.Size(70, 279);
+            this.all_about_product_btn.TabIndex = 60;
+            this.all_about_product_btn.Text = "Все\r\nпро\r\nтовар";
+            this.all_about_product_btn.UseVisualStyleBackColor = false;
+            this.all_about_product_btn.Click += new System.EventHandler(this.all_about_product_btn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.current_product_list_dg);
+            this.panel1.Controls.Add(this.all_about_product_btn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 174);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(682, 279);
+            this.panel1.TabIndex = 61;
+            // 
             // all_shop_info_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(682, 453);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.current_product_list_dg);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "all_shop_info_form";
@@ -290,6 +318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -315,5 +344,7 @@
         private System.Windows.Forms.Label close_time_lb;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label phone_lb;
+        private System.Windows.Forms.Button all_about_product_btn;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KursachProject.Model;
+using KursachProject.Controller;
 
 namespace KursachProject
 {
     public partial class all_shop_info_form : Form
     {
+        Shop shop;
+
         internal all_shop_info_form(Shop shop)
         {
             InitializeComponent();
-    
+
             name_lb.Text = shop.shop_name;
             specialization_lb.Text = shop.shop_specialization;
             adress_lb.Text = shop.adress.ToString();
@@ -24,7 +27,7 @@ namespace KursachProject
             start_time_lb.Text = shop.open_time.ToString();
             close_time_lb.Text = shop.close_time.ToString();
 
-
+            this.shop = shop;
 
             current_product_list_dg.AllowUserToAddRows = false;
 
@@ -52,6 +55,18 @@ namespace KursachProject
         private void exit_btn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void all_about_product_btn_Click(object sender, EventArgs e)
+        {
+            Product product = shop.products[current_product_list_dg.CurrentCell.RowIndex].Item2;
+            MessageBox.Show("Назва продукту: " + product.product_name +
+                "\nОпис продукту: " + product.product_description +
+                "\nЦіна продукту: " + product.product_price +
+                "\nКількість продукту на складі: " + shop.products[current_product_list_dg.CurrentCell.RowIndex].Item1.ToString() +
+                "\nДата виготовлення: " + product.date_of_manufacture.ToString() +
+                "\nТермін придатності, виражений в днях: " + product.expiration_date.ToString() +
+                "\nДнів до псування: " + product.time_to_spoil().ToString());
         }
     }
 }

@@ -88,15 +88,15 @@ namespace KursachProject.Controller
             write_all_shops(shops);
         }
         //метод, который возвращает все товары, доступные во всех магазинах
-        public static List<Product> get_all_products()
+        public static List<Tuple<int, Product>> get_all_products()
         {
             List<Shop> shops = get_shop_list();
-            List<Product> products = new List<Product>();
+            List<Tuple<int, Product>> products = new List<Tuple<int, Product>>();
             for(int i = 0; i < shops.Count; i++)
             {
                 for(int j = 0; j < shops[i].products.Count; j++)
                 {
-                    products.Add(shops[i].products[j].Item2);
+                    products.Add(shops[i].products[j]);
                 }
             }
             return products;

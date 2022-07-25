@@ -40,6 +40,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.delete_product_from_list_btn = new System.Windows.Forms.Button();
             this.current_product_list_dg = new System.Windows.Forms.DataGridView();
+            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_of_manufacturing = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.add_product_to_current_list_btn = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -73,9 +77,20 @@
             this.delete_selected_shop = new System.Windows.Forms.Button();
             this.show_all_info_about_shop_btn = new System.Windows.Forms.Button();
             this.shop_list_dg = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shop_spec_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone_num_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.close_shop_time_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.delete_product_sample_from_list_btn = new System.Windows.Forms.Button();
             this.product_template_list_dg = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_description_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignment_period_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.expiration_date_tb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,44 +102,35 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.search_products_page = new System.Windows.Forms.TabPage();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.tbSearchEventName = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.cbSelectDayTime = new System.Windows.Forms.ComboBox();
-            this.cbDuration = new System.Windows.Forms.ComboBox();
-            this.cbSelectDate = new System.Windows.Forms.ComboBox();
-            this.cbSelectCity = new System.Windows.Forms.ComboBox();
+            this.result_dg = new System.Windows.Forms.DataGridView();
             this.ResultPanel = new System.Windows.Forms.Panel();
-            this.btnBuySelectedTicket = new System.Windows.Forms.Button();
+            this.btnExportSearchResult = new System.Windows.Forms.Button();
             this.btnClearSearchResult = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_description_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assignment_period_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.close_shop_time_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_of_manufacturing = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.check_b_fresh_products = new System.Windows.Forms.CheckBox();
+            this.tbMaxPrice = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbMinCount = new System.Windows.Forms.ComboBox();
+            this.cbSelectSpec = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cbSelectCity = new System.Windows.Forms.ComboBox();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tb_shop_name = new System.Windows.Forms.TextBox();
+            this.tbSearchProductName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.product_name_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product_count_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shop_open_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shop_close_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_to_favorite_btn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.main_tab_control.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.current_product_list_dg)).BeginInit();
@@ -133,11 +139,11 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product_template_list_dg)).BeginInit();
             this.search_products_page.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.result_dg)).BeginInit();
             this.ResultPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel11.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // main_tab_control
@@ -491,6 +497,42 @@
             this.current_product_list_dg.Size = new System.Drawing.Size(414, 318);
             this.current_product_list_dg.TabIndex = 22;
             // 
+            // product_name
+            // 
+            this.product_name.HeaderText = "Товар";
+            this.product_name.MinimumWidth = 6;
+            this.product_name.Name = "product_name";
+            this.product_name.ReadOnly = true;
+            this.product_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.product_name.Width = 125;
+            // 
+            // product_count
+            // 
+            this.product_count.HeaderText = "Кількість";
+            this.product_count.MinimumWidth = 6;
+            this.product_count.Name = "product_count";
+            this.product_count.ReadOnly = true;
+            this.product_count.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.product_count.Width = 125;
+            // 
+            // product_price
+            // 
+            this.product_price.HeaderText = "Ціна";
+            this.product_price.MinimumWidth = 6;
+            this.product_price.Name = "product_price";
+            this.product_price.ReadOnly = true;
+            this.product_price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.product_price.Width = 125;
+            // 
+            // date_of_manufacturing
+            // 
+            this.date_of_manufacturing.HeaderText = "Дата виготовлення";
+            this.date_of_manufacturing.MinimumWidth = 6;
+            this.date_of_manufacturing.Name = "date_of_manufacturing";
+            this.date_of_manufacturing.ReadOnly = true;
+            this.date_of_manufacturing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.date_of_manufacturing.Width = 125;
+            // 
             // add_product_to_current_list_btn
             // 
             this.add_product_to_current_list_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -790,7 +832,9 @@
             this.shop_list_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.shop_list_dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
+            this.shop_spec_column,
             this.dataGridViewTextBoxColumn4,
+            this.phone_num_column,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.close_shop_time_column});
@@ -803,6 +847,69 @@
             this.shop_list_dg.RowTemplate.Height = 24;
             this.shop_list_dg.Size = new System.Drawing.Size(817, 458);
             this.shop_list_dg.TabIndex = 24;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Назва магазину";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // shop_spec_column
+            // 
+            this.shop_spec_column.HeaderText = "Спеціалізація";
+            this.shop_spec_column.MinimumWidth = 6;
+            this.shop_spec_column.Name = "shop_spec_column";
+            this.shop_spec_column.ReadOnly = true;
+            this.shop_spec_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.shop_spec_column.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Адреса";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // phone_num_column
+            // 
+            this.phone_num_column.HeaderText = "Телефон власника";
+            this.phone_num_column.MinimumWidth = 6;
+            this.phone_num_column.Name = "phone_num_column";
+            this.phone_num_column.ReadOnly = true;
+            this.phone_num_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.phone_num_column.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Кількість товарів";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Час відчинення";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // close_shop_time_column
+            // 
+            this.close_shop_time_column.HeaderText = "Час зачинення";
+            this.close_shop_time_column.MinimumWidth = 6;
+            this.close_shop_time_column.Name = "close_shop_time_column";
+            this.close_shop_time_column.ReadOnly = true;
+            this.close_shop_time_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.close_shop_time_column.Width = 125;
             // 
             // tabPage2
             // 
@@ -855,6 +962,42 @@
             this.product_template_list_dg.RowTemplate.Height = 24;
             this.product_template_list_dg.Size = new System.Drawing.Size(326, 464);
             this.product_template_list_dg.TabIndex = 23;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Товар";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // product_description_column
+            // 
+            this.product_description_column.HeaderText = "Опис продукту";
+            this.product_description_column.MinimumWidth = 6;
+            this.product_description_column.Name = "product_description_column";
+            this.product_description_column.ReadOnly = true;
+            this.product_description_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.product_description_column.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ціна";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // assignment_period_column
+            // 
+            this.assignment_period_column.HeaderText = "Термін придатності";
+            this.assignment_period_column.MinimumWidth = 6;
+            this.assignment_period_column.Name = "assignment_period_column";
+            this.assignment_period_column.ReadOnly = true;
+            this.assignment_period_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.assignment_period_column.Width = 125;
             // 
             // panel1
             // 
@@ -951,13 +1094,200 @@
             this.search_products_page.TabIndex = 3;
             this.search_products_page.Text = "Пошук товарів";
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel10.Controls.Add(this.result_dg);
+            this.panel10.Controls.Add(this.ResultPanel);
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Controls.Add(this.panel9);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(817, 524);
+            this.panel10.TabIndex = 4;
+            // 
+            // result_dg
+            // 
+            this.result_dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.result_dg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.product_name_,
+            this.product_count_,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.phone_number,
+            this.shop_open_time,
+            this.shop_close_time,
+            this.add_to_favorite_btn});
+            this.result_dg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.result_dg.Location = new System.Drawing.Point(0, 111);
+            this.result_dg.MultiSelect = false;
+            this.result_dg.Name = "result_dg";
+            this.result_dg.RowHeadersVisible = false;
+            this.result_dg.RowHeadersWidth = 51;
+            this.result_dg.RowTemplate.Height = 24;
+            this.result_dg.Size = new System.Drawing.Size(659, 339);
+            this.result_dg.TabIndex = 25;
+            // 
+            // ResultPanel
+            // 
+            this.ResultPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ResultPanel.Controls.Add(this.btnExportSearchResult);
+            this.ResultPanel.Controls.Add(this.btnClearSearchResult);
+            this.ResultPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ResultPanel.Location = new System.Drawing.Point(0, 456);
+            this.ResultPanel.Name = "ResultPanel";
+            this.ResultPanel.Size = new System.Drawing.Size(659, 68);
+            this.ResultPanel.TabIndex = 5;
+            // 
+            // btnExportSearchResult
+            // 
+            this.btnExportSearchResult.BackColor = System.Drawing.Color.Red;
+            this.btnExportSearchResult.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExportSearchResult.ForeColor = System.Drawing.Color.White;
+            this.btnExportSearchResult.Location = new System.Drawing.Point(358, 0);
+            this.btnExportSearchResult.Name = "btnExportSearchResult";
+            this.btnExportSearchResult.Size = new System.Drawing.Size(301, 68);
+            this.btnExportSearchResult.TabIndex = 3;
+            this.btnExportSearchResult.Text = "Експортувати результат пошуку";
+            this.btnExportSearchResult.UseVisualStyleBackColor = false;
+            this.btnExportSearchResult.Click += new System.EventHandler(this.btnExportSearchResult_Click);
+            // 
+            // btnClearSearchResult
+            // 
+            this.btnClearSearchResult.BackColor = System.Drawing.Color.Red;
+            this.btnClearSearchResult.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnClearSearchResult.ForeColor = System.Drawing.Color.White;
+            this.btnClearSearchResult.Location = new System.Drawing.Point(0, 0);
+            this.btnClearSearchResult.Name = "btnClearSearchResult";
+            this.btnClearSearchResult.Size = new System.Drawing.Size(222, 68);
+            this.btnClearSearchResult.TabIndex = 2;
+            this.btnClearSearchResult.Text = "Очистити результати пошуку";
+            this.btnClearSearchResult.UseVisualStyleBackColor = false;
+            this.btnClearSearchResult.Click += new System.EventHandler(this.btnClearSearchResult_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel11.Controls.Add(this.check_b_fresh_products);
+            this.panel11.Controls.Add(this.tbMaxPrice);
+            this.panel11.Controls.Add(this.label20);
+            this.panel11.Controls.Add(this.label19);
+            this.panel11.Controls.Add(this.label18);
+            this.panel11.Controls.Add(this.cbMinCount);
+            this.panel11.Controls.Add(this.cbSelectSpec);
+            this.panel11.Controls.Add(this.label21);
+            this.panel11.Controls.Add(this.cbSelectCity);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel11.Location = new System.Drawing.Point(659, 111);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(158, 413);
+            this.panel11.TabIndex = 4;
+            // 
+            // check_b_fresh_products
+            // 
+            this.check_b_fresh_products.AutoSize = true;
+            this.check_b_fresh_products.ForeColor = System.Drawing.Color.Black;
+            this.check_b_fresh_products.Location = new System.Drawing.Point(3, 289);
+            this.check_b_fresh_products.Name = "check_b_fresh_products";
+            this.check_b_fresh_products.Size = new System.Drawing.Size(152, 29);
+            this.check_b_fresh_products.TabIndex = 13;
+            this.check_b_fresh_products.Text = "Свіжі товари";
+            this.check_b_fresh_products.UseVisualStyleBackColor = true;
+            // 
+            // tbMaxPrice
+            // 
+            this.tbMaxPrice.Location = new System.Drawing.Point(0, 253);
+            this.tbMaxPrice.Name = "tbMaxPrice";
+            this.tbMaxPrice.Size = new System.Drawing.Size(158, 30);
+            this.tbMaxPrice.TabIndex = 12;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(14, 225);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(105, 25);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Макс. ціна";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(8, 136);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(143, 50);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Мін. кільк-сть.\r\nна складі\r\n";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(2, 72);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(137, 25);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Спеціалізація";
+            // 
+            // cbMinCount
+            // 
+            this.cbMinCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cbMinCount.ForeColor = System.Drawing.Color.White;
+            this.cbMinCount.FormattingEnabled = true;
+            this.cbMinCount.Items.AddRange(new object[] {
+            "50",
+            "100",
+            "200",
+            "500",
+            "1000"});
+            this.cbMinCount.Location = new System.Drawing.Point(0, 189);
+            this.cbMinCount.Name = "cbMinCount";
+            this.cbMinCount.Size = new System.Drawing.Size(158, 33);
+            this.cbMinCount.TabIndex = 3;
+            // 
+            // cbSelectSpec
+            // 
+            this.cbSelectSpec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cbSelectSpec.ForeColor = System.Drawing.Color.White;
+            this.cbSelectSpec.FormattingEnabled = true;
+            this.cbSelectSpec.Location = new System.Drawing.Point(0, 100);
+            this.cbSelectSpec.Name = "cbSelectSpec";
+            this.cbSelectSpec.Size = new System.Drawing.Size(158, 33);
+            this.cbSelectSpec.TabIndex = 3;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(-2, 8);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(153, 25);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Виберіть місто";
+            // 
+            // cbSelectCity
+            // 
+            this.cbSelectCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cbSelectCity.ForeColor = System.Drawing.Color.White;
+            this.cbSelectCity.FormattingEnabled = true;
+            this.cbSelectCity.Location = new System.Drawing.Point(0, 36);
+            this.cbSelectCity.Name = "cbSelectCity";
+            this.cbSelectCity.Size = new System.Drawing.Size(158, 33);
+            this.cbSelectCity.TabIndex = 3;
+            // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel9.Controls.Add(this.label23);
             this.panel9.Controls.Add(this.label22);
-            this.panel9.Controls.Add(this.textBox1);
-            this.panel9.Controls.Add(this.tbSearchEventName);
+            this.panel9.Controls.Add(this.tb_shop_name);
+            this.panel9.Controls.Add(this.tbSearchProductName);
             this.panel9.Controls.Add(this.btnSearch);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
@@ -965,12 +1295,39 @@
             this.panel9.Size = new System.Drawing.Size(817, 111);
             this.panel9.TabIndex = 3;
             // 
-            // tbSearchEventName
+            // label23
             // 
-            this.tbSearchEventName.Location = new System.Drawing.Point(254, 15);
-            this.tbSearchEventName.Name = "tbSearchEventName";
-            this.tbSearchEventName.Size = new System.Drawing.Size(405, 30);
-            this.tbSearchEventName.TabIndex = 0;
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(15, 69);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(231, 25);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "Введіть назву магазину";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(15, 18);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(207, 25);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "Введіть назву товару";
+            // 
+            // tb_shop_name
+            // 
+            this.tb_shop_name.Location = new System.Drawing.Point(278, 66);
+            this.tb_shop_name.Name = "tb_shop_name";
+            this.tb_shop_name.Size = new System.Drawing.Size(381, 30);
+            this.tb_shop_name.TabIndex = 0;
+            // 
+            // tbSearchProductName
+            // 
+            this.tbSearchProductName.Location = new System.Drawing.Point(278, 15);
+            this.tbSearchProductName.Name = "tbSearchProductName";
+            this.tbSearchProductName.Size = new System.Drawing.Size(381, 30);
+            this.tbSearchProductName.TabIndex = 0;
             // 
             // btnSearch
             // 
@@ -983,334 +1340,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "search 🔍";
             this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel10.Controls.Add(this.dataGridView1);
-            this.panel10.Controls.Add(this.ResultPanel);
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Controls.Add(this.panel9);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(817, 524);
-            this.panel10.TabIndex = 4;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel11.Controls.Add(this.label18);
-            this.panel11.Controls.Add(this.label19);
-            this.panel11.Controls.Add(this.label20);
-            this.panel11.Controls.Add(this.label21);
-            this.panel11.Controls.Add(this.cbSelectDayTime);
-            this.panel11.Controls.Add(this.cbDuration);
-            this.panel11.Controls.Add(this.cbSelectDate);
-            this.panel11.Controls.Add(this.cbSelectCity);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel11.Location = new System.Drawing.Point(659, 111);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(158, 413);
-            this.panel11.TabIndex = 4;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(13, 258);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 50);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "preferred\r\ntime of day";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(14, 151);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(116, 50);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "select event\r\nduration";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(20, 77);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(106, 25);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "select date";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(29, 3);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(97, 25);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "select city";
-            // 
-            // cbSelectDayTime
-            // 
-            this.cbSelectDayTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbSelectDayTime.ForeColor = System.Drawing.Color.White;
-            this.cbSelectDayTime.FormattingEnabled = true;
-            this.cbSelectDayTime.Items.AddRange(new object[] {
-            "morning",
-            "evening"});
-            this.cbSelectDayTime.Location = new System.Drawing.Point(3, 321);
-            this.cbSelectDayTime.Name = "cbSelectDayTime";
-            this.cbSelectDayTime.Size = new System.Drawing.Size(158, 33);
-            this.cbSelectDayTime.TabIndex = 7;
-            this.cbSelectDayTime.Text = "select time of day";
-            // 
-            // cbDuration
-            // 
-            this.cbDuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbDuration.ForeColor = System.Drawing.Color.White;
-            this.cbDuration.FormattingEnabled = true;
-            this.cbDuration.Items.AddRange(new object[] {
-            "<1 hour",
-            "<2 hour",
-            "<3 hour",
-            "<4 hour",
-            "<5 hour"});
-            this.cbDuration.Location = new System.Drawing.Point(3, 217);
-            this.cbDuration.Name = "cbDuration";
-            this.cbDuration.Size = new System.Drawing.Size(158, 33);
-            this.cbDuration.TabIndex = 6;
-            this.cbDuration.Text = "select duration";
-            // 
-            // cbSelectDate
-            // 
-            this.cbSelectDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbSelectDate.ForeColor = System.Drawing.Color.White;
-            this.cbSelectDate.FormattingEnabled = true;
-            this.cbSelectDate.Items.AddRange(new object[] {
-            "today",
-            "this month",
-            "next month",
-            "this year"});
-            this.cbSelectDate.Location = new System.Drawing.Point(0, 110);
-            this.cbSelectDate.Name = "cbSelectDate";
-            this.cbSelectDate.Size = new System.Drawing.Size(158, 33);
-            this.cbSelectDate.TabIndex = 4;
-            this.cbSelectDate.Text = "select date";
-            // 
-            // cbSelectCity
-            // 
-            this.cbSelectCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbSelectCity.ForeColor = System.Drawing.Color.White;
-            this.cbSelectCity.FormattingEnabled = true;
-            this.cbSelectCity.Location = new System.Drawing.Point(0, 36);
-            this.cbSelectCity.Name = "cbSelectCity";
-            this.cbSelectCity.Size = new System.Drawing.Size(158, 33);
-            this.cbSelectCity.TabIndex = 3;
-            this.cbSelectCity.Text = "select city";
-            // 
-            // ResultPanel
-            // 
-            this.ResultPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ResultPanel.Controls.Add(this.btnBuySelectedTicket);
-            this.ResultPanel.Controls.Add(this.btnClearSearchResult);
-            this.ResultPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ResultPanel.Location = new System.Drawing.Point(0, 456);
-            this.ResultPanel.Name = "ResultPanel";
-            this.ResultPanel.Size = new System.Drawing.Size(659, 68);
-            this.ResultPanel.TabIndex = 5;
-            // 
-            // btnBuySelectedTicket
-            // 
-            this.btnBuySelectedTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBuySelectedTicket.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnBuySelectedTicket.ForeColor = System.Drawing.Color.White;
-            this.btnBuySelectedTicket.Location = new System.Drawing.Point(507, 0);
-            this.btnBuySelectedTicket.Name = "btnBuySelectedTicket";
-            this.btnBuySelectedTicket.Size = new System.Drawing.Size(152, 68);
-            this.btnBuySelectedTicket.TabIndex = 3;
-            this.btnBuySelectedTicket.Text = "buy selected ticket";
-            this.btnBuySelectedTicket.UseVisualStyleBackColor = false;
-            // 
-            // btnClearSearchResult
-            // 
-            this.btnClearSearchResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnClearSearchResult.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnClearSearchResult.ForeColor = System.Drawing.Color.White;
-            this.btnClearSearchResult.Location = new System.Drawing.Point(0, 0);
-            this.btnClearSearchResult.Name = "btnClearSearchResult";
-            this.btnClearSearchResult.Size = new System.Drawing.Size(145, 68);
-            this.btnClearSearchResult.TabIndex = 2;
-            this.btnClearSearchResult.Text = "clear search list";
-            this.btnClearSearchResult.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.product_name_,
-            this.product_count_,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.phone_number});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 111);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 339);
-            this.dataGridView1.TabIndex = 25;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Товар";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // product_description_column
-            // 
-            this.product_description_column.HeaderText = "Опис продукту";
-            this.product_description_column.MinimumWidth = 6;
-            this.product_description_column.Name = "product_description_column";
-            this.product_description_column.ReadOnly = true;
-            this.product_description_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.product_description_column.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Ціна";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // assignment_period_column
-            // 
-            this.assignment_period_column.HeaderText = "Термін придатності";
-            this.assignment_period_column.MinimumWidth = 6;
-            this.assignment_period_column.Name = "assignment_period_column";
-            this.assignment_period_column.ReadOnly = true;
-            this.assignment_period_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.assignment_period_column.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Назва магазину";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Адреса";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Кількість товарів";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Час відчинення";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // close_shop_time_column
-            // 
-            this.close_shop_time_column.HeaderText = "Час зачинення";
-            this.close_shop_time_column.MinimumWidth = 6;
-            this.close_shop_time_column.Name = "close_shop_time_column";
-            this.close_shop_time_column.ReadOnly = true;
-            this.close_shop_time_column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.close_shop_time_column.Width = 125;
-            // 
-            // product_name
-            // 
-            this.product_name.HeaderText = "Товар";
-            this.product_name.MinimumWidth = 6;
-            this.product_name.Name = "product_name";
-            this.product_name.ReadOnly = true;
-            this.product_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.product_name.Width = 125;
-            // 
-            // product_count
-            // 
-            this.product_count.HeaderText = "Кількість";
-            this.product_count.MinimumWidth = 6;
-            this.product_count.Name = "product_count";
-            this.product_count.ReadOnly = true;
-            this.product_count.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.product_count.Width = 125;
-            // 
-            // product_price
-            // 
-            this.product_price.HeaderText = "Ціна";
-            this.product_price.MinimumWidth = 6;
-            this.product_price.Name = "product_price";
-            this.product_price.ReadOnly = true;
-            this.product_price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.product_price.Width = 125;
-            // 
-            // date_of_manufacturing
-            // 
-            this.date_of_manufacturing.HeaderText = "Дата виготовлення";
-            this.date_of_manufacturing.MinimumWidth = 6;
-            this.date_of_manufacturing.Name = "date_of_manufacturing";
-            this.date_of_manufacturing.ReadOnly = true;
-            this.date_of_manufacturing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.date_of_manufacturing.Width = 125;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(15, 18);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(207, 25);
-            this.label22.TabIndex = 11;
-            this.label22.Text = "Введіть назву товару";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(254, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(405, 30);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(15, 69);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(231, 25);
-            this.label23.TabIndex = 11;
-            this.label23.Text = "Введіть назву магазину";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // product_name_
             // 
@@ -1318,6 +1348,7 @@
             this.product_name_.MinimumWidth = 6;
             this.product_name_.Name = "product_name_";
             this.product_name_.ReadOnly = true;
+            this.product_name_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.product_name_.Width = 125;
             // 
             // product_count_
@@ -1326,6 +1357,7 @@
             this.product_count_.MinimumWidth = 6;
             this.product_count_.Name = "product_count_";
             this.product_count_.ReadOnly = true;
+            this.product_count_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.product_count_.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
@@ -1352,7 +1384,34 @@
             this.phone_number.MinimumWidth = 6;
             this.phone_number.Name = "phone_number";
             this.phone_number.ReadOnly = true;
+            this.phone_number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.phone_number.Width = 125;
+            // 
+            // shop_open_time
+            // 
+            this.shop_open_time.HeaderText = "Магазин працює з:";
+            this.shop_open_time.MinimumWidth = 6;
+            this.shop_open_time.Name = "shop_open_time";
+            this.shop_open_time.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.shop_open_time.Width = 125;
+            // 
+            // shop_close_time
+            // 
+            this.shop_close_time.HeaderText = "Зачиняється о:";
+            this.shop_close_time.MinimumWidth = 6;
+            this.shop_close_time.Name = "shop_close_time";
+            this.shop_close_time.ReadOnly = true;
+            this.shop_close_time.Width = 125;
+            // 
+            // add_to_favorite_btn
+            // 
+            this.add_to_favorite_btn.HeaderText = "Днів до псування";
+            this.add_to_favorite_btn.MinimumWidth = 6;
+            this.add_to_favorite_btn.Name = "add_to_favorite_btn";
+            this.add_to_favorite_btn.ReadOnly = true;
+            this.add_to_favorite_btn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.add_to_favorite_btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.add_to_favorite_btn.Width = 125;
             // 
             // Form1
             // 
@@ -1375,13 +1434,13 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product_template_list_dg)).EndInit();
             this.search_products_page.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.result_dg)).EndInit();
+            this.ResultPanel.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.ResultPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1448,43 +1507,49 @@
         private System.Windows.Forms.Button show_all_info_about_shop_btn;
         private System.Windows.Forms.TabPage search_products_page;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox tbSearchEventName;
+        private System.Windows.Forms.TextBox tbSearchProductName;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel ResultPanel;
-        private System.Windows.Forms.Button btnBuySelectedTicket;
+        private System.Windows.Forms.Button btnExportSearchResult;
         private System.Windows.Forms.Button btnClearSearchResult;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cbSelectDayTime;
-        private System.Windows.Forms.ComboBox cbDuration;
-        private System.Windows.Forms.ComboBox cbSelectDate;
         private System.Windows.Forms.ComboBox cbSelectCity;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView result_dg;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_description_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn assignment_period_column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn close_shop_time_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_count;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_of_manufacturing;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_shop_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shop_spec_column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone_num_column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn close_shop_time_column;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cbSelectSpec;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cbMinCount;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox tbMaxPrice;
+        private System.Windows.Forms.CheckBox check_b_fresh_products;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_name_;
         private System.Windows.Forms.DataGridViewTextBoxColumn product_count_;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shop_open_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shop_close_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add_to_favorite_btn;
     }
 }
 

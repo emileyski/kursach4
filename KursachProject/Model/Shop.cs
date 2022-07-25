@@ -108,7 +108,6 @@ namespace KursachProject.Model
         {
             if (hour > 23)
                 this.hour = hour;
-
             else
                 this.hour = 0;
             if (minute > 59)

@@ -127,6 +127,7 @@ namespace KursachProject
                     int x = added_product_sample_cb.SelectedIndex;
 
                     Product product = Serializator.get_product_sample_list()[x];
+                    product.shop_id = shop.shop_Id;
                     product.date_of_manufacture = new Date(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
                     Tuple<int, Product> tuple = Tuple.Create(int.Parse(product_count_tb.Text), product);
                     shop.products.Add(tuple);

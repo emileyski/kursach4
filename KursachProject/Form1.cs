@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using SD = System.Data;
 using KursachProject.Controller;
 using KursachProject.Model;
 using Microsoft.VisualBasic;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace KursachProject
 {
@@ -13,6 +16,10 @@ namespace KursachProject
 
         List<Tuple<int, Product>> currentProductList;
 
+        //delegate Tuple<List<Product>, List<Tuple<Shop, Product>>> search_method_pattern(List<Product> products, string filter);
+
+        //List<search_method_pattern> search_Methods;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +28,12 @@ namespace KursachProject
             product_template_list_dg.AllowUserToAddRows = false;
             shop_list_dg.AllowUserToAddRows = false;
             current_product_list_dg.AllowUserToAddRows = false;
+            result_dg.AllowUserToAddRows = false;
+
+            cbSelectCity.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSelectSpec.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbMinCount.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void exit_btn_Click(object sender, EventArgs e)
@@ -30,7 +43,8 @@ namespace KursachProject
 
         private void add_product_to_sample_btn_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 Serializator.add_product_to_sample(new Product(product_name_tb.Text,
                     product_description_tb.Text,
                     float.Parse(product_price_tb.Text),
@@ -39,8 +53,9 @@ namespace KursachProject
                 //чистим поля для ввода
                 make_third_tab();
             }
-            catch {
-                MessageBox.Show("Одне або кілька полів було заповнено некоректно", "Увага", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            catch
+            {
+                MessageBox.Show("Одне або кілька полів було заповнено некоректно", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -57,13 +72,16 @@ namespace KursachProject
                 case 2:
                     make_third_tab();
                     break;
+                case 3:
+                    make_fourth_tab();
+                    break;
             }
         }
 
         private void make_spec_list()
         {
             List<Shop> shops = Serializator.get_shop_list();
-            for(int i = 0; i < shops.Count; i++)
+            for (int i = 0; i < shops.Count; i++)
             {
                 if (!shop_spec_cb.Items.Contains(shops[i].shop_specialization))
                 {
@@ -71,7 +89,7 @@ namespace KursachProject
                 }
             }
         }
-        
+
         //метод, который подгружает данные для первой страницы
         private void make_first_tab()
         {
@@ -104,10 +122,12 @@ namespace KursachProject
         {
             shop_list_dg.Rows.Clear();
             List<Shop> shopList = Serializator.get_shop_list();
-            for(int i = 0; i < shopList.Count; i++)
+            for (int i = 0; i < shopList.Count; i++)
             {
                 shop_list_dg.Rows.Add(shopList[i].shop_name,
+                    shopList[i].shop_specialization,
                     shopList[i].adress.ToString(),
+                    shopList[i].phone_number,
                     shopList[i].products.Count,
                     shopList[i].open_time.ToString(),
                     shopList[i].close_time.ToString());
@@ -128,6 +148,30 @@ namespace KursachProject
             product_description_tb.Clear();
             product_price_tb.Clear();
             expiration_date_tb.Clear();
+        }
+        private void make_fourth_tab()
+        {
+            tbSearchProductName.Clear();
+            tb_shop_name.Clear();
+            cbSelectCity.SelectedIndex = -1;
+            cbSelectSpec.SelectedIndex = -1;
+            cbMinCount.SelectedIndex = -1;
+            tbMaxPrice.Clear();
+            check_b_fresh_products.Checked = false;
+            result_dg.Rows.Clear();
+
+            List<Shop> shops = Serializator.get_shop_list();
+            for (int i = 0; i < shops.Count; i++)
+            {
+                if (!cbSelectCity.Items.Contains(shops[i].adress.city))
+                {
+                    cbSelectCity.Items.Add(shops[i].adress.city);
+                }
+                if (!cbSelectSpec.Items.Contains(shops[i].shop_specialization))
+                {
+                    cbSelectSpec.Items.Add(shops[i].shop_specialization);
+                }
+            }
         }
         private void add_product_to_current_list_btn_Click(object sender, EventArgs e)
         {
@@ -157,7 +201,7 @@ namespace KursachProject
 
         private void delete_product_from_list_btn_Click(object sender, EventArgs e)
         {
-            if(current_product_list_dg.Rows.Count > 0)
+            if (current_product_list_dg.Rows.Count > 0)
             {
                 currentProductList.RemoveAt(current_product_list_dg.CurrentCell.RowIndex);
                 current_product_list_dg.Rows.RemoveAt(current_product_list_dg.CurrentCell.RowIndex);
@@ -185,7 +229,7 @@ namespace KursachProject
                 {
                     bool isGoodPhoneNum = true;
 
-                    for(int i = 0; i < phone_number_box.Text.Length; i++)
+                    for (int i = 0; i < phone_number_box.Text.Length; i++)
                     {
                         if (!char.IsDigit(phone_number_box.Text[i]))
                         {
@@ -197,7 +241,7 @@ namespace KursachProject
                     {
                         reg_pass_form _Form = new reg_pass_form(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
                             new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
-                            new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList,Serializator.getHash("")));
+                            new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList, Serializator.getHash("")));
                         _Form.ShowDialog();
                         make_first_tab();
                     }
@@ -219,7 +263,7 @@ namespace KursachProject
 
         private void delete_product_sample_from_list_btn_Click(object sender, EventArgs e)
         {
-            if(product_template_list_dg.CurrentCell!= null)
+            if (product_template_list_dg.CurrentCell != null)
             {
                 Serializator.delete_product_sample_from_list(product_template_list_dg.CurrentCell.RowIndex);
                 product_template_list_dg.Rows.RemoveAt(product_template_list_dg.CurrentCell.RowIndex);
@@ -257,7 +301,7 @@ namespace KursachProject
                 string password;
                 password = Interaction.InputBox("Введіть пароль", "Пароль");
                 //MessageBox.Show(password + "\n" + password.Length);
-                
+
                 if (Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex].give_access(password))
                 {
                     Hide();
@@ -279,6 +323,86 @@ namespace KursachProject
             all_shop_info_form form = new all_shop_info_form(Serializator.get_shop_list()[shop_list_dg.CurrentCell.RowIndex]);
             form.ShowDialog();
             Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //Tuple<List<Shop>, List<Product>> res_tuple = InfoFinder.get_products_by_city(Serializator.get_shop_list(), cbSelectCity.Text);
+
+            result_dg.Rows.Clear();
+
+            List<Tuple<int, Product>> result = Serializator.get_all_products();
+
+            if (cbSelectCity.Text.Length > 0)
+            {
+                result = InfoFinder.get_products_by_city(result, cbSelectCity.Text);
+            }
+            if (tb_shop_name.Text.Length > 0)
+            {
+                result = InfoFinder.get_products_by_shop_name(result, tb_shop_name.Text);
+            }
+            if (cbSelectSpec.Text.Length > 0)
+            {
+                result = InfoFinder.get_products_by_specialization(result, cbSelectSpec.Text);
+            }
+            if(tbSearchProductName.Text.Length > 0)
+            {
+                result = InfoFinder.get_products_by_product_name(result, tbSearchProductName.Text);
+            }
+            if (cbMinCount.Text.Length > 0)
+            {
+                result = InfoFinder.get_products_by_min_count(result, cbMinCount.Text);
+            }
+            if (tbMaxPrice.Text.Length > 0)
+            {
+                result = InfoFinder.get_products_by_max_price(result, tbMaxPrice.Text);
+            }
+            if (check_b_fresh_products.Checked)
+            {
+                result = InfoFinder.get_products_by_by_freshness(result);
+            }
+
+            DataGridViewCellStyle style = new DataGridViewCellStyle();
+            style.BackColor = System.Drawing.Color.Red;
+            style.ForeColor = System.Drawing.Color.White;
+
+            for (int i = 0; i < result.Count; i++)
+            {
+                Shop shop = result[i].Item2.get_parent_shop();
+                Product product = result[i].Item2;
+
+                result_dg.Rows.Add(product.product_name,
+                    result[i].Item1,
+                    shop.shop_name,
+                    shop.adress.ToString(),
+                    shop.phone_number,
+                    shop.open_time.ToString(),
+                    shop.close_time.ToString(),
+                    product.time_to_spoil());
+                if (product.time_to_spoil() < 1)
+                {
+                    result_dg.Rows[i].DefaultCellStyle = style;
+                }
+            }
+        }
+
+        private void btnClearSearchResult_Click(object sender, EventArgs e)
+        {
+            make_fourth_tab();
+        }
+
+        private void btnExportSearchResult_Click(object sender, EventArgs e)
+        {
+            Excel.Application exApp = new Excel.Application();
+
+            exApp.Workbooks.Add();
+            Excel.Worksheet whs = (Excel.Worksheet)exApp.ActiveSheet;
+
+            int i, j;
+
+           // for(i = 0;i)
+
+            exApp.Visible = true;
         }
     }
 }

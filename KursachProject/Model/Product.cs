@@ -73,6 +73,22 @@ namespace KursachProject.Model
                 return false;
             }
         }
+
+        public Shop get_parent_shop()
+        {
+            List<Shop> shops = KursachProject.Controller.Serializator.get_shop_list();
+
+            for(int i = 0; i < shops.Count; i++)
+            {
+                if (shops[i].shop_Id == shop_id)
+                {
+                    return shops[i];
+                    //break;
+                }
+            }
+
+            return null;
+        }
     }
     
 }

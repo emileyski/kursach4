@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using KursachProject.Model;
-using KursachProject.Controller;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace KursachProject
 {
@@ -67,6 +61,62 @@ namespace KursachProject
                 "\nДата виготовлення: " + product.date_of_manufacture.ToString() +
                 "\nТермін придатності, виражений в днях: " + product.expiration_date.ToString() +
                 "\nДнів до псування: " + product.time_to_spoil().ToString());
+        }
+
+        private void export_btn_Click(object sender, EventArgs e)
+        {
+            Excel.Application exApp = new Excel.Application();
+
+            exApp.Workbooks.Add();
+            Excel.Worksheet whs = (Excel.Worksheet)exApp.ActiveSheet;
+
+            whs.Cells[1, 1] = "Назва магазину";
+            whs.Cells[1, 2] = shop.shop_name;
+            whs.Cells[2, 1] = "Спеціалізація";
+            whs.Cells[2, 2] = shop.shop_specialization;
+            whs.Cells[3, 1] = "Адреса";
+            whs.Cells[3, 2] = shop.adress.ToString();
+            whs.Cells[4, 1] = "Номер телефону";
+            whs.Cells[4, 2] = "+" + shop.phone_number + ";";
+            whs.Cells[5, 1] = "Працює з:";
+            whs.Cells[5, 2] = "[" + shop.open_time.ToString() + "]";
+            whs.Cells[6, 1] = "Працює до:";
+            whs.Cells[6, 2] = "[" + shop.close_time.ToString() + "]";
+
+            whs.Cells[7, 1] = "Назва товару";
+            whs.Cells[7, 2] = "Кількість на складі";
+            whs.Cells[7, 3] = "Ціна";
+            whs.Cells[7, 4] = "Дата виготовлення";
+            whs.Cells[7, 5] = "Термін придатності(дн.)";
+            whs.Cells[7, 6] = "Днів до псування";
+
+            int i, j;
+            for (i = 0; i < shop.products.Count; i++)
+            {
+                Product product = shop.products[i].Item2;
+
+                string[] row = new string[]
+                {
+                    product.product_name,
+                    shop.products[i].Item1.ToString(),
+                    product.product_price.ToString(),
+                    product.date_of_manufacture.ToString(),
+                    product.expiration_date.ToString(),
+                   product.time_to_spoil().ToString()
+                };
+                for (j = 0; j < current_product_list_dg.ColumnCount; j++)
+                {
+                    whs.Cells[i + 8, j + 1] = row[j];
+                    if (product.time_to_spoil() < 0)
+                    {
+                        whs.Cells[i + 8, 6].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                    }
+                }
+            }
+
+            whs.Cells[shop.products.Count + 10, 3] = "Інформація актуальна на:";
+            whs.Cells[shop.products.Count + 11, 3] = DateTime.Now.ToString();
+            exApp.Visible = true;
         }
     }
 }

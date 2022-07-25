@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using SD = System.Data;
 using KursachProject.Controller;
 using KursachProject.Model;
 using Microsoft.VisualBasic;
@@ -113,10 +112,10 @@ namespace KursachProject
             street_tb.Clear();
             number_tb.Clear();
             product_count_tb.Clear();
-            cbStartTimeHour.Text = "год.";
-            cbStartTimeMinute.Text = "хв.";
-            cbEndTimeHour.Text = "год.";
-            cbEndTimeMinute.Text = "хв.";
+            cbStartTimeHour_.Text = "год.";
+            cbStartTimeMinute_.Text = "хв.";
+            cbEndTimeHour_.Text = "год.";
+            cbEndTimeMinute_.Text = "хв.";
         }
         private void make_second_tab()
         {
@@ -240,7 +239,7 @@ namespace KursachProject
                     if (phone_number_box.Text.Length > 0 && isGoodPhoneNum)
                     {
                         reg_pass_form _Form = new reg_pass_form(new Shop(id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
-                            new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
+                            new Time(cbStartTimeHour_.SelectedIndex, cbStartTimeMinute_.SelectedIndex), new Time(cbEndTimeHour_.SelectedIndex, cbEndTimeMinute_.SelectedIndex),
                             new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), currentProductList, Serializator.getHash("")));
                         _Form.ShowDialog();
                         make_first_tab();
@@ -325,6 +324,8 @@ namespace KursachProject
             Show();
         }
 
+        private List<Tuple<int, Product>> res = new List<Tuple<int, Product>>();
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //Tuple<List<Shop>, List<Product>> res_tuple = InfoFinder.get_products_by_city(Serializator.get_shop_list(), cbSelectCity.Text);
@@ -345,7 +346,7 @@ namespace KursachProject
             {
                 result = InfoFinder.get_products_by_specialization(result, cbSelectSpec.Text);
             }
-            if(tbSearchProductName.Text.Length > 0)
+            if (tbSearchProductName.Text.Length > 0)
             {
                 result = InfoFinder.get_products_by_product_name(result, tbSearchProductName.Text);
             }
@@ -384,6 +385,7 @@ namespace KursachProject
                     result_dg.Rows[i].DefaultCellStyle = style;
                 }
             }
+            res = result;
         }
 
         private void btnClearSearchResult_Click(object sender, EventArgs e)
@@ -398,9 +400,44 @@ namespace KursachProject
             exApp.Workbooks.Add();
             Excel.Worksheet whs = (Excel.Worksheet)exApp.ActiveSheet;
 
-            int i, j;
 
-           // for(i = 0;i)
+            int i, j;
+            whs.Cells[1, 1] = "Назва товару";
+            whs.Cells[1, 2] = "Кількість на складі";
+            whs.Cells[1, 3] = "Назва магазину";
+            whs.Cells[1, 4] = "Адреса";
+            whs.Cells[1, 5] = "Телефон";
+            whs.Cells[1, 6] = "Відчиняється маг.:";
+            whs.Cells[1, 7] = "Зачиняється маг.:";
+            whs.Cells[1, 8] = "Днів до псування:";
+
+            for (i = 0; i < result_dg.RowCount; i++)
+            {
+                Shop shop = res[i].Item2.get_parent_shop();
+                Product product = res[i].Item2;
+
+                string[] row = new string[]
+                {
+                    product.product_name,
+                    res[i].Item1.ToString(),
+                    shop.shop_name,
+                    shop.adress.ToString(),
+                    "+"+shop.phone_number +";",
+                    "["+shop.open_time.ToString()+"]",
+                   "["+ shop.close_time.ToString()+"]",
+                    product.time_to_spoil().ToString()
+                };
+                for (j = 0; j < result_dg.ColumnCount; j++)
+                {
+                    whs.Cells[i + 2, j + 1] = row[j];
+                    if (product.time_to_spoil() < 0)
+                    {
+                        whs.Cells[i + 2, 8].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                    }
+                }
+            }
+
+            
 
             exApp.Visible = true;
         }

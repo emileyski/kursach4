@@ -31,10 +31,10 @@
             this.main_tab_control = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.cbEndTimeMinute = new System.Windows.Forms.ComboBox();
-            this.cbEndTimeHour = new System.Windows.Forms.ComboBox();
-            this.cbStartTimeMinute = new System.Windows.Forms.ComboBox();
-            this.cbStartTimeHour = new System.Windows.Forms.ComboBox();
+            this.cbEndTimeMinute_ = new System.Windows.Forms.ComboBox();
+            this.cbEndTimeHour_ = new System.Windows.Forms.ComboBox();
+            this.cbStartTimeMinute_ = new System.Windows.Forms.ComboBox();
+            this.cbStartTimeHour_ = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -165,10 +165,10 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPage1.Controls.Add(this.panel7);
-            this.tabPage1.Controls.Add(this.cbEndTimeMinute);
-            this.tabPage1.Controls.Add(this.cbEndTimeHour);
-            this.tabPage1.Controls.Add(this.cbStartTimeMinute);
-            this.tabPage1.Controls.Add(this.cbStartTimeHour);
+            this.tabPage1.Controls.Add(this.cbEndTimeMinute_);
+            this.tabPage1.Controls.Add(this.cbEndTimeHour_);
+            this.tabPage1.Controls.Add(this.cbStartTimeMinute_);
+            this.tabPage1.Controls.Add(this.cbStartTimeHour_);
             this.tabPage1.Controls.Add(this.panel8);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.label16);
@@ -217,14 +217,14 @@
             this.panel7.Size = new System.Drawing.Size(10, 90);
             this.panel7.TabIndex = 12;
             // 
-            // cbEndTimeMinute
+            // cbEndTimeMinute_
             // 
-            this.cbEndTimeMinute.DropDownHeight = 100;
-            this.cbEndTimeMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbEndTimeMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbEndTimeMinute.FormattingEnabled = true;
-            this.cbEndTimeMinute.IntegralHeight = false;
-            this.cbEndTimeMinute.Items.AddRange(new object[] {
+            this.cbEndTimeMinute_.DropDownHeight = 100;
+            this.cbEndTimeMinute_.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbEndTimeMinute_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbEndTimeMinute_.FormattingEnabled = true;
+            this.cbEndTimeMinute_.IntegralHeight = false;
+            this.cbEndTimeMinute_.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -285,20 +285,20 @@
             "57",
             "58",
             "59"});
-            this.cbEndTimeMinute.Location = new System.Drawing.Point(302, 164);
-            this.cbEndTimeMinute.Name = "cbEndTimeMinute";
-            this.cbEndTimeMinute.Size = new System.Drawing.Size(70, 33);
-            this.cbEndTimeMinute.TabIndex = 29;
-            this.cbEndTimeMinute.Text = "хв.";
+            this.cbEndTimeMinute_.Location = new System.Drawing.Point(302, 164);
+            this.cbEndTimeMinute_.Name = "cbEndTimeMinute_";
+            this.cbEndTimeMinute_.Size = new System.Drawing.Size(70, 33);
+            this.cbEndTimeMinute_.TabIndex = 10;
+            this.cbEndTimeMinute_.Text = "хв.";
             // 
-            // cbEndTimeHour
+            // cbEndTimeHour_
             // 
-            this.cbEndTimeHour.DropDownHeight = 100;
-            this.cbEndTimeHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbEndTimeHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbEndTimeHour.FormattingEnabled = true;
-            this.cbEndTimeHour.IntegralHeight = false;
-            this.cbEndTimeHour.Items.AddRange(new object[] {
+            this.cbEndTimeHour_.DropDownHeight = 100;
+            this.cbEndTimeHour_.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbEndTimeHour_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbEndTimeHour_.FormattingEnabled = true;
+            this.cbEndTimeHour_.IntegralHeight = false;
+            this.cbEndTimeHour_.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -323,20 +323,20 @@
             "21",
             "22",
             "23"});
-            this.cbEndTimeHour.Location = new System.Drawing.Point(217, 164);
-            this.cbEndTimeHour.Name = "cbEndTimeHour";
-            this.cbEndTimeHour.Size = new System.Drawing.Size(70, 33);
-            this.cbEndTimeHour.TabIndex = 28;
-            this.cbEndTimeHour.Text = "год.";
+            this.cbEndTimeHour_.Location = new System.Drawing.Point(217, 164);
+            this.cbEndTimeHour_.Name = "cbEndTimeHour_";
+            this.cbEndTimeHour_.Size = new System.Drawing.Size(70, 33);
+            this.cbEndTimeHour_.TabIndex = 9;
+            this.cbEndTimeHour_.Text = "год.";
             // 
-            // cbStartTimeMinute
+            // cbStartTimeMinute_
             // 
-            this.cbStartTimeMinute.DropDownHeight = 100;
-            this.cbStartTimeMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbStartTimeMinute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbStartTimeMinute.FormattingEnabled = true;
-            this.cbStartTimeMinute.IntegralHeight = false;
-            this.cbStartTimeMinute.Items.AddRange(new object[] {
+            this.cbStartTimeMinute_.DropDownHeight = 100;
+            this.cbStartTimeMinute_.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbStartTimeMinute_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbStartTimeMinute_.FormattingEnabled = true;
+            this.cbStartTimeMinute_.IntegralHeight = false;
+            this.cbStartTimeMinute_.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -397,20 +397,20 @@
             "57",
             "58",
             "59"});
-            this.cbStartTimeMinute.Location = new System.Drawing.Point(95, 164);
-            this.cbStartTimeMinute.Name = "cbStartTimeMinute";
-            this.cbStartTimeMinute.Size = new System.Drawing.Size(70, 33);
-            this.cbStartTimeMinute.TabIndex = 27;
-            this.cbStartTimeMinute.Text = "хв.";
+            this.cbStartTimeMinute_.Location = new System.Drawing.Point(95, 164);
+            this.cbStartTimeMinute_.Name = "cbStartTimeMinute_";
+            this.cbStartTimeMinute_.Size = new System.Drawing.Size(70, 33);
+            this.cbStartTimeMinute_.TabIndex = 8;
+            this.cbStartTimeMinute_.Text = "хв.";
             // 
-            // cbStartTimeHour
+            // cbStartTimeHour_
             // 
-            this.cbStartTimeHour.DropDownHeight = 100;
-            this.cbStartTimeHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbStartTimeHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbStartTimeHour.FormattingEnabled = true;
-            this.cbStartTimeHour.IntegralHeight = false;
-            this.cbStartTimeHour.Items.AddRange(new object[] {
+            this.cbStartTimeHour_.DropDownHeight = 100;
+            this.cbStartTimeHour_.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbStartTimeHour_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbStartTimeHour_.FormattingEnabled = true;
+            this.cbStartTimeHour_.IntegralHeight = false;
+            this.cbStartTimeHour_.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -435,11 +435,11 @@
             "21",
             "22",
             "23"});
-            this.cbStartTimeHour.Location = new System.Drawing.Point(15, 164);
-            this.cbStartTimeHour.Name = "cbStartTimeHour";
-            this.cbStartTimeHour.Size = new System.Drawing.Size(70, 33);
-            this.cbStartTimeHour.TabIndex = 26;
-            this.cbStartTimeHour.Text = "год.";
+            this.cbStartTimeHour_.Location = new System.Drawing.Point(15, 164);
+            this.cbStartTimeHour_.Name = "cbStartTimeHour_";
+            this.cbStartTimeHour_.Size = new System.Drawing.Size(70, 33);
+            this.cbStartTimeHour_.TabIndex = 7;
+            this.cbStartTimeHour_.Text = "год.";
             // 
             // panel8
             // 
@@ -541,7 +541,7 @@
             this.add_product_to_current_list_btn.Location = new System.Drawing.Point(227, 314);
             this.add_product_to_current_list_btn.Name = "add_product_to_current_list_btn";
             this.add_product_to_current_list_btn.Size = new System.Drawing.Size(146, 98);
-            this.add_product_to_current_list_btn.TabIndex = 21;
+            this.add_product_to_current_list_btn.TabIndex = 14;
             this.add_product_to_current_list_btn.Text = "Додати товар в магазин\r\n";
             this.add_product_to_current_list_btn.UseVisualStyleBackColor = false;
             this.add_product_to_current_list_btn.Click += new System.EventHandler(this.add_product_to_current_list_btn_Click);
@@ -567,7 +567,7 @@
             this.product_count_tb.Location = new System.Drawing.Point(179, 280);
             this.product_count_tb.Name = "product_count_tb";
             this.product_count_tb.Size = new System.Drawing.Size(191, 30);
-            this.product_count_tb.TabIndex = 18;
+            this.product_count_tb.TabIndex = 13;
             // 
             // label14
             // 
@@ -593,14 +593,14 @@
             this.product_sample_cb.Location = new System.Drawing.Point(170, 226);
             this.product_sample_cb.Name = "product_sample_cb";
             this.product_sample_cb.Size = new System.Drawing.Size(200, 33);
-            this.product_sample_cb.TabIndex = 15;
+            this.product_sample_cb.TabIndex = 12;
             // 
             // phone_number_box
             // 
             this.phone_number_box.Location = new System.Drawing.Point(601, 103);
             this.phone_number_box.Name = "phone_number_box";
             this.phone_number_box.Size = new System.Drawing.Size(205, 30);
-            this.phone_number_box.TabIndex = 14;
+            this.phone_number_box.TabIndex = 11;
             // 
             // panel6
             // 
@@ -648,21 +648,21 @@
             this.number_tb.Location = new System.Drawing.Point(306, 79);
             this.number_tb.Name = "number_tb";
             this.number_tb.Size = new System.Drawing.Size(71, 30);
-            this.number_tb.TabIndex = 12;
+            this.number_tb.TabIndex = 4;
             // 
             // street_tb
             // 
             this.street_tb.Location = new System.Drawing.Point(99, 79);
             this.street_tb.Name = "street_tb";
             this.street_tb.Size = new System.Drawing.Size(119, 30);
-            this.street_tb.TabIndex = 11;
+            this.street_tb.TabIndex = 3;
             // 
             // city_tb
             // 
             this.city_tb.Location = new System.Drawing.Point(248, 43);
             this.city_tb.Name = "city_tb";
             this.city_tb.Size = new System.Drawing.Size(125, 30);
-            this.city_tb.TabIndex = 10;
+            this.city_tb.TabIndex = 2;
             // 
             // panel2
             // 
@@ -688,7 +688,7 @@
             this.shop_spec_cb.Location = new System.Drawing.Point(590, 48);
             this.shop_spec_cb.Name = "shop_spec_cb";
             this.shop_spec_cb.Size = new System.Drawing.Size(216, 33);
-            this.shop_spec_cb.TabIndex = 7;
+            this.shop_spec_cb.TabIndex = 6;
             // 
             // label9
             // 
@@ -723,14 +723,14 @@
             this.shop_spec_tb.Multiline = true;
             this.shop_spec_tb.Name = "shop_spec_tb";
             this.shop_spec_tb.Size = new System.Drawing.Size(216, 36);
-            this.shop_spec_tb.TabIndex = 3;
+            this.shop_spec_tb.TabIndex = 5;
             // 
             // shop_name_tb
             // 
             this.shop_name_tb.Location = new System.Drawing.Point(170, 6);
             this.shop_name_tb.Name = "shop_name_tb";
             this.shop_name_tb.Size = new System.Drawing.Size(205, 30);
-            this.shop_name_tb.TabIndex = 3;
+            this.shop_name_tb.TabIndex = 1;
             // 
             // label10
             // 
@@ -767,7 +767,7 @@
             this.add_shop_to_list_btn.Location = new System.Drawing.Point(76, 434);
             this.add_shop_to_list_btn.Name = "add_shop_to_list_btn";
             this.add_shop_to_list_btn.Size = new System.Drawing.Size(236, 75);
-            this.add_shop_to_list_btn.TabIndex = 0;
+            this.add_shop_to_list_btn.TabIndex = 15;
             this.add_shop_to_list_btn.Text = "Добавити інформацію про магазин";
             this.add_shop_to_list_btn.UseVisualStyleBackColor = false;
             this.add_shop_to_list_btn.Click += new System.EventHandler(this.add_shop_to_list_btn_Click);
@@ -1498,10 +1498,10 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox cbEndTimeMinute;
-        private System.Windows.Forms.ComboBox cbEndTimeHour;
-        private System.Windows.Forms.ComboBox cbStartTimeMinute;
-        private System.Windows.Forms.ComboBox cbStartTimeHour;
+        private System.Windows.Forms.ComboBox cbEndTimeMinute_;
+        private System.Windows.Forms.ComboBox cbEndTimeHour_;
+        private System.Windows.Forms.ComboBox cbStartTimeMinute_;
+        private System.Windows.Forms.ComboBox cbStartTimeHour_;
         private System.Windows.Forms.Button edit_selected_shop_btn;
         private System.Windows.Forms.Button delete_selected_shop;
         private System.Windows.Forms.Button show_all_info_about_shop_btn;

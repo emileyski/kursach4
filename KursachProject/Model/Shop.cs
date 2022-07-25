@@ -1,13 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using KursachProject.Controller;
 
 namespace KursachProject.Model
 {
+    public struct Time
+    {
+        public int hour;
+        public int minute;
+        public Time(int _hour, int _minute)
+        {
+            if (_hour < 23 || _hour > 0)
+                this.hour = _hour;
+            else
+                this.hour = 0;
+            if (_minute < 59 || _hour > 0)
+                this.minute = _minute;
+            else
+                this.minute = 0;
+        }
+        public override string ToString()
+        {
+            string time = (hour < 10) ? "0" + hour : hour.ToString();
+            time += ":";
+            time += (minute < 10) ? "0" + minute : minute.ToString();
+            return time;
+        }
+    }
     internal class Shop
     {
         public int shop_Id;
@@ -100,28 +119,6 @@ namespace KursachProject.Model
             return "м. " + city + ", вул. " + street + ", буд. " + number;
         }
     }
-    public struct Time
-    {
-        public int hour;
-        public int minute;
-        public Time(int hour, int minute)
-        {
-            if (hour > 23)
-                this.hour = hour;
-            else
-                this.hour = 0;
-            if (minute > 59)
-                this.minute = minute;
-            else
-                this.minute = 0;
-        }
-        public override string ToString()
-        {
-            string time = (hour < 10) ? "0" + hour : hour.ToString();
-            time += ":";
-            time += (minute < 10) ? "0" + minute : minute.ToString();
-            return time;
-        }
-    }
+    
 
 }

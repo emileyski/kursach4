@@ -11,7 +11,7 @@ namespace KursachProject
     public partial class edit_shop_panel : Form
     {
         private Shop shop;
-        private string password;
+        //private string password;
         private int _product_count;
 
         internal edit_shop_panel(Shop shop)
@@ -56,7 +56,7 @@ namespace KursachProject
             }
 
 
-            password = shop.password;
+            //password = shop.password;
 
 
             added_product_sample_cb.Items.Clear();
@@ -81,7 +81,7 @@ namespace KursachProject
                 }
                 Shop newShop = new Shop(shop.shop_Id, shop_name_tb.Text, shop_spec, phone_number_box.Text,
                                 new Time(int.Parse(cbStartTimeHour.Text), int.Parse(cbStartTimeMinute.Text)), new Time(int.Parse(cbEndTimeHour.Text), int.Parse(cbEndTimeMinute.Text)),
-                                new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), shop.products, password);
+                                new Adress(city_tb.Text, street_tb.Text, int.Parse(number_tb.Text)), shop.products, shop.password);
                 if (newShop.Equals(shop) && _product_count == shop.products.Count)
                 {
                     DialogResult result = MessageBox.Show("Ви ніяк не змінили поточний магазин, Ви хочете вийти не змінивши нічого?", "Ви впевнені?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -152,22 +152,24 @@ namespace KursachProject
             _password = Interaction.InputBox("Введіть пароль", "Пароль");
             if (Serializator.getHash(_password) == shop.password)
             {
-                while (true)
+                string newPassword = Interaction.InputBox("Введіть новий пароль", "Пароль");
+                string ConfirmNewPassword = Interaction.InputBox("Підтвердіть новий пароль", "Пароль");
+                if (newPassword.Length > 5 && ConfirmNewPassword == newPassword)
                 {
-                    string newPassword = Interaction.InputBox("Введіть новий пароль", "Пароль");
-                    string ConfirmNewPassword = Interaction.InputBox("Введіть новий пароль", "Пароль");
-                    if (newPassword.Length > 5 && ConfirmNewPassword == newPassword)
-                    {
-                        password = Serializator.getHash(newPassword);
-                        MessageBox.Show("Ви успішно змінили пароль", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    shop.password = Serializator.getHash(newPassword);
+                    MessageBox.Show("Ви успішно змінили пароль", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Введений вами пароль не є коректним, (тобто коротший ніж 6 символів) або ж вони не співпадають", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
+                else
+                {
+                    MessageBox.Show("Введений вами пароль не є коректним, (тобто коротший ніж 6 символів) або ж вони не співпадають", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Ви ввели неправильний пароль", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 
         }
